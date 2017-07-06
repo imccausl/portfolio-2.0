@@ -1,0 +1,22 @@
+{
+  "name": "imccausl.github.io",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imccausl/imccausl.github.io.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Ian McCausland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imccausl/imccausl.github.io/issues"
+  },
+  "homepage": "https://github.com/imccausl/imccausl.github.io#readme"
+}

@@ -1,110 +1,12 @@
-<!DOCTYPE html><html lang="en" class=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><!-- Framework stylesheets / Fonts --><link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700|VT323|Share+Tech+Mono" rel="stylesheet"><link rel="stylesheet" href="styles/main.css"><title>Ian R. McCausland | Web Developer | Resume</title></head><body><!-- Main Page --><div id="r-view top"><header id="r-header-view" class="text-center"></header><div class="container"><div class="row"><div class="col-xs-12"><section id="r-body-view" class="text-left"></section></div></div></div><!-- /container --></div><!-- /#r-view --><footer><div class="container"><div class="row text-center"><div class="col-sm-12"><ul id="r-footer-menu" class="text-center"><li><a href="#top"><span class="fa fa-arrow-up fa-lg"></span></a></li><li class="sr-only">Back to the Top</li></ul></div></div><div class="row"><div id="r-footer--socialview" class="text-center"></div><p class="text-center copyright">© <span id="r-copyright"></span> Ian McCausland. All Rights Reserved.</p></div></div></footer><!-- ENDOF Main Page --><!-- Templates --><script id="r-header" type="text/x-handlebars-template"><img class="img-small" src="{{img}}" alt="biographical image">
-						
-			<h1>{{fullName}}</h1>
-			<h2 class="text-capitalize">{{description}}</h2>
-			<h2 class="text-capitalize">{{city}}, {{province}}</h2>
-			
-			
-			<div id="r-connect" class="btn btn-info">
-				{{#each socialFeed}}
-				<a href="{{this.url}}" target="_blank"><span class="r-social fa fa-2x fa-{{this.service}}"></span></a>
-				{{/each}}
-			</div>
-			
-			{{> navMenu}}</script><script id="r-qualifications" data-type="summary" class="r-templates" type="text/x-handlebars-template"><section id="r-qual-view">
-				{{> sectionHeader}}
-				<ul>
-					{{#each this.content}}
-					<li>{{this}}.</li>
-					{{/each}}
-				</ul>
-			</section></script><script id="r-experience" data-type="experience" class="r-templates" type="text/x-handlebars-template"><section id="r-exp-view">
-				{{> sectionHeader modifyHeader="Relevant "}}
-				<table>
-					{{#each this.content}}
-					{{#if this.relevant}}
-						{{> experiencePartial}}
-					{{/if}}
-					{{/each}}
-				</table>
-				
-				{{> sectionHeader modifyHeader="Other "}}
-				<table>
-					{{#each this.content}}
-					{{#unless this.relevant}}
-						{{> experiencePartial}}
-					{{/unless}}
-					{{/each}}
-				</table>
-			</section></script><script id="r-volunteer" data-type="volunteer-experience" class="r-templates" type="text/x-handlebars-template"><section id="r-volunteer-exp-view">
-				{{> sectionHeader}}
-				<table>
-					{{#each this.content}}
-						{{> experiencePartial}}
-					{{/each}}
-				</table>
-			</section></script><script id="r-publications" data-type="publications" class="r-templates" type="text/x-handlebars-template"><section id="r-publications-view">
-				{{> sectionHeader}}
-				<table>
-					<tbody>
-						{{#each this.content}}
-						<tr><td>&ldquo;{{{this.title}}}&rdquo; in {{{this.citation}}}</td></tr>
-						{{/each}}
-					</tbody>
-				</table>
-			</section></script><script id="r-education" data-type="education" class="r-templates" type="text/x-handlebars-template"><section id="r-education-view">
-				{{> sectionHeader}}
-				<table>
-					{{#each this.content}}
-					<tr>
-						<td style="width:15%;">{{this.year}}</td>
-						<td style="width:85%;">{{this.degree}},
-						<strong> {{this.program}}</strong>,
-						{{this.institution}}, {{this.location}} {{#unless this.completed}}({{this.notes}}){{/unless}}</td>
-					</tr>
-					
-					{{#each this.awards}}
-					{{#if this}}
-					<tr>
-						<td></td>	
-						<ul>
-							<td><li><em>Awarded a {{this}}</em></li></td>
-						</ul>
-					</tr>
-					{{/if}}
-					{{/each}}
-					{{/each}}
-				</table>
-			</section></script><script id="r-technical-skills" data-type="skills" class="r-templates" type="text/x-handlebars-template"><section id="r-technical-skills-view">
-				{{> sectionHeader}}
-				{{#each this.content}}
-				<p><strong class="text-capitalize">{{category}}</strong>: {{skills}}</p>
-				{{/each}}
-			</section></script><script id="r-experience-partial" type="text/x-handlebars-template"><tr>
-						<td style="width:20%;">{{this.start}}-{{this.end}}</td>
-						<th style="width:65%;">{{this.position}}, {{this.company}}</th>
-						<td style="width:15%;">{{this.location}}</td>
-					</tr>
-					<tr>
-						<td colspan="3">
-							<ul>
-								{{#each this.highlights}}
-								<li>{{{this}}}.</li>
-								{{/each}}
-							</ul>
-						</td>
-					</tr></script><script id="r-footer--social" type="text/x-handlebars-template">{{#each this}}
-			<a id="{{this.service}}" href="{{this.url}}" target="_blank">
-				<span class="r-social fa fa-3x fa-{{this.service}}"></span>
-			</a>
-			{{/each}}</script><script id="r-nav-template" type="text/x-handlebars-template"><nav class="r-nav text-center" id="r-fixed-menu" data-spy="affix" data-offset-top="420">
-				<div class="container">
-				<div id="r-jump-menu" class="text-center row">
-					<ul id="r-jump-menu-items"><li><a href="#top" class="jump-active">{{fullName}}</a></li></ul>
-				</div>
-				</div>
-				<a id="r-nav-menu" href="#" class="btn btn-default">
-					 <span id="r-nav-icon" class="fa fa-chevron-down"></span>
-				</a>	
-				
-			</nav></script><script src="scripts/libraries.js"></script><script src="scripts/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Ian McCausland | Web Developer</title>
+</head>
+<body>
+	
+</body>
+</html>
