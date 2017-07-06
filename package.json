@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/imccausl/imccausl.github.io/issues"
   },
-  "homepage": "https://github.com/imccausl/imccausl.github.io#readme"
+  "homepage": "https://github.com/imccausl/imccausl.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
