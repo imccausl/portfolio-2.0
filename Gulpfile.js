@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
 const del = require('del');
 const runSequence = require('run-sequence');
+const webpack = require('webpack-stream');
 
 const SASS_PATH = 'dev/scss/**/*.scss';
 
@@ -21,9 +22,16 @@ gulp.task('sass', ()=>{
 gulp.task('browserSync', ()=>{
   browserSync.init({
     server: {
-      baseDir: 'dev'
+      baseDir: './',
+      index: 'dev/index.html'
     },
   });
+});
+
+gulp.task('webpack', ()=>{
+  return gulp.src('dev/js/main.js')
+    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('useref', ()=>{
@@ -43,21 +51,22 @@ gulp.task('clean:dist', ()=>{
   return del.sync('dist');
 });
 
-gulp.task('watch', ['browserSync', 'sass'], ()=>{
+gulp.task('watch', ['webpack', 'browserSync', 'sass'], ()=>{
   gulp.watch(SASS_PATH, ['sass']);
   gulp.watch('dev/*.html', browserSync.reload);
-  gulp.watch('dev/js/**/*.js', browserSync.reload);
+  gulp.watch(['dev/js/**/*.js', '!dev/js/bundle.js'], ['webpack']);
+  gulp.watch('dev/js/bundle.js', browserSync.reload);
 });
 
 gulp.task('build', (callback) => {
   runSequence('clean:dist',
-    ['sass', 'useref', 'fonts'],
+    ['webpack', 'sass', 'useref', 'fonts'],
     callback
   );
 });
 
 gulp.task('default', (callback) => {
-  runSequence(['sass', 'browserSync', 'watch'],
+  runSequence(['webpack', 'sass', 'browserSync', 'watch'],
     callback
   );
 })
