@@ -7,12 +7,14 @@ const cssnano = require('gulp-cssnano');
 const del = require('del');
 const runSequence = require('run-sequence');
 const webpack = require('webpack-stream');
+const concat = require('gulp-concat');
 
 const SASS_PATH = 'dev/scss/**/*.scss';
 
 gulp.task('sass', ()=>{
   return gulp.src(SASS_PATH)
     .pipe(sass())
+    .pipe(concat('app.css'))
     .pipe(gulp.dest('dev/css'))
     .pipe(browserSync.reload({
       stream: true
@@ -29,7 +31,7 @@ gulp.task('browserSync', ()=>{
 });
 
 gulp.task('webpack', ()=>{
-  return gulp.src('dev/js/main.js')
+  return gulp.src('dev/js/app.js')
     .pipe(webpack( require('./webpack.config.js') ))
     .pipe(gulp.dest('dist/js/'));
 });
