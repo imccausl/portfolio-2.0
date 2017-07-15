@@ -1,0 +1,38 @@
+.nav--main {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.nav--list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      padding: 5px 0;
+      margin: 0;
+    }
+  }
+
+.nav--logo {
+  color: firebrick;
+}
+  .contact-nav {
+    padding: 0.5em 0;
+    
+    li {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .contact-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

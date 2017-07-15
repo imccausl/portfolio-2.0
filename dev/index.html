@@ -8,12 +8,48 @@
 	<title>Ian McCausland | Web Developer</title>
 
 	<!-- build:css css/style.css -->
-	<link href="css/style.css" rel="stylesheet">
-	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="../dev/css/app.css" rel="stylesheet">
 	<!--endbuild -->
 </head>
 <body>
+	<header class="site-main">
+		<div class="container">
+	  	<div class="hero">
+				<h2 class="text-center owner--role"><i class="fa fa-code"></i></h2>
+				<h1 class="text--huge text-center">Ian McCausland</h1>
+				<h2 class="text--small text--allcaps text-center">(<span class="owner--role">web developer</span>)</h2>
+	  	</div>
+		</div>
+	</header>
+
+	<nav class="nav--main container">
+		<hr>
+	 <ul class="nav--list text-center text--small">
+		 <li><a href="#" class="text--bold">ABOUT</a> /</li>
+		 <li><a href="#" class="text--bold">PROJECTS</a> /</li>
+		 <li><a href="#" class="text--bold">CONTACT</a> /</li>
+		 <li><a href="#" class="text--bold">BLOG</a></li>
+	 </ul>
+		 <hr>
+	</nav>
+
+	<section class="contact-bar">
+		<div class="container">
+			<div class="box">
+				<ul class="nav--list contact-nav text-center text--big">
+					<li><a href="https://www.github.com/imccausl" id="github"><i class="fa fa-github"></i></a></li>
+					<li><a href="#" id="linkedin"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#" id="twitter"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#" id="envelope"><i class="fa fa-envelope"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
 	
+
+
 	<!-- build:js js/site.js -->
 	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="../dist/js/bundle.js"></script>

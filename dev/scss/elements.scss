@@ -1,0 +1,61 @@
+body {
+  font-family: 'Roboto';
+}
+
+a {
+  &:link, &:visited {
+    text-decoration: none;
+    color: midnightblue;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: orangered;
+  }
+}
+
+
+.background {
+  // height: 96vh;
+  // background-image: url(../img/bio.jpg);
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
+}
+
+.site--name, .site--name h1, .site--name h2 {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.site--name {
+  // border: 1px solid black;
+  padding: 0.5em 0;
+  
+  max-width: 800px;
+  min-width: 300px;
+}
+
+.hero {
+  margin: 3em auto 0;
+  padding: 0;
+  max-width: 405px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.owner--role {
+    color: orangered;
+}
+/* Hover color change for social links */
+#twitter:hover{color: rgb(0,172,237);}
+#linkedin:hover{color: rgb(0, 123,182);}
+#skype:hover{color: #00aff0;}
+#envelope:hover{color:orangered;}
+#github:hover{color:#6e5494;}
+#medium:hover{color:#3cb371;}
