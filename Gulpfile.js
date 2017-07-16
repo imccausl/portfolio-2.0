@@ -6,7 +6,9 @@ const uglify = require('gulp-uglify');
 const cssnano = require('gulp-cssnano');
 const del = require('del');
 const runSequence = require('run-sequence');
-const webpack = require('webpack-stream');
+const gulpWebpack = require('webpack-stream');
+const webpack = require('webpack');
+const mywpConfig = require('./webpack.config');
 const concat = require('gulp-concat');
 
 const SASS_PATH = 'dev/scss/**/*.scss';
@@ -32,7 +34,7 @@ gulp.task('browserSync', ()=>{
 
 gulp.task('webpack', ()=>{
   return gulp.src('dev/js/app.js')
-    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulpWebpack( mywpConfig, webpack ))
     .pipe(gulp.dest('dist/js/'));
 });
 
