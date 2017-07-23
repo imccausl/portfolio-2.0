@@ -1,3 +1,4 @@
 import LoadWidget from './modules/CodingTimeWidget';
 
-LoadWidget($);
+
+setInterval(LoadWidget($), 300000);
