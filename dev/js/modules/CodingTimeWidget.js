@@ -28,11 +28,11 @@ function CodingData($) {
   }
 
   function displayLangs(data, view) {
-    $(view).append(`This week I have been working with ${data}`);
+    $(view).html(`This week I have been working with ${data}`);
   }
 
   function displayTime(data, view) {
-    $(view).append(`for a total of ${data}`);  
+    $(view).html(`for a total of ${data}`);  
   }
 
   const getLanguages = $.ajax({
