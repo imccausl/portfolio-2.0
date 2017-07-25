@@ -1,4 +1,19 @@
-import LoadWidget from './modules/CodingTimeWidget';
+import Router from './modules/Router';
 
+Router.config({mode:'history'});
 
-setInterval(LoadWidget($), 300000);
+Router.add(/about/,()=>{
+  console.log("About");
+  $.get('./dev/routes/about.html').done(data => $('#main-view').html(data));
+})
+
+.add(/projects/, ()=>{
+  console.log("Projects");
+  $.get('./dev/routes/projects.html').done(data => $('#main-view').html(data));
+})
+
+.add(/blog/, ()=>{
+  console.log("Blog");
+})
+
+.check('/about').listen();
