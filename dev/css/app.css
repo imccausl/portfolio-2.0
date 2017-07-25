@@ -1,11 +1,36 @@
-.hero h1, .hero h2 {
-  padding: 0;
-  margin: 0; }
+.hero {
+  margin: 0 auto;
+  padding-top: 1em;
+  max-width: 405px; }
+  .hero h1, .hero h2 {
+    padding: 0;
+    margin: 0; }
+
+.image--bio {
+  display: inline-block;
+  border-radius: 50%;
+  padding-bottom: 0.5em; }
 
 .box {
   position: relative;
   margin: 0 auto;
   padding: 0; }
+
+.coding-widget {
+  color: black;
+  margin: 0 auto;
+  padding-top: 0em; }
+  .coding-widget h3 {
+    margin: 0;
+    padding: 0.3em 1em;
+    font-size: 1em; }
+
+.coding-widget--button {
+  padding-top: 0.5em; }
+
+.about-me {
+  margin: 1em;
+  line-height: 1.3; }
 
 body {
   font-family: 'Roboto'; }
@@ -30,16 +55,11 @@ a:hover {
   max-width: 800px;
   min-width: 300px; }
 
-.hero {
-  margin: 3em auto 0;
-  padding: 0;
-  max-width: 405px; }
-
 .container {
   max-width: 800px; }
 
-.owner--role {
-  color: orangered; }
+.route--footer {
+  padding-bottom: 4.5em; }
 
 /* Hover color change for social links */
 #twitter:hover {
@@ -147,6 +167,7 @@ a:hover {
 
 .contact-bar {
   position: fixed;
+  background-color: rgba(255, 255, 255, 0.85);
   bottom: 0;
   width: 100%; }
 
@@ -197,7 +218,7 @@ h5, h6 {
   line-height: 0; }
 
 .text--salient {
-  color: firebrick; }
+  color: orangered; }
 
 .text--allcaps {
   text-transform: uppercase; }

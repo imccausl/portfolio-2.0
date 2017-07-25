@@ -39,19 +39,14 @@ a {
   min-width: 300px;
 }
 
-.hero {
-  margin: 3em auto 0;
-  padding: 0;
-  max-width: 405px;
-}
-
 .container {
   max-width: 800px;
 }
 
-.owner--role {
-    color: orangered;
+.route--footer {
+  padding-bottom: 4.5em;
 }
+
 /* Hover color change for social links */
 #twitter:hover{color: rgb(0,172,237);}
 #linkedin:hover{color: rgb(0, 123,182);}
