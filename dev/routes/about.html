@@ -1,17 +1,56 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <section class="coding-widget text-center">
+      <section class="col-spacing text-center">
         <h3><i class="fa fa-code fa-3x"></i></h3>
         <h3><span id="coding-widget--langs"></span> <span id="coding-widget--time"></span></h3>
-        <p class="coding-widget--button"><a class="btn btn-default text--medium" href="https://wakatime.com/@imccausl">See Details</a></p>
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#codingDetails">More Details</button>
       </section>
     </div>
 
+    <!-- Coding Details Modal -->
+    <div class="modal fade" id="codingDetails" tabindex="1" role="dialog" aria-labelledby="codingDetailsLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h5 class="modal-title text-center" id="codingDetailsLabel">Details of The Last 7 Days</h5>
+          </div>
+          <div class="modal-body">
+            <embed src="https://wakatime.com/share/@imccausl/ec49b523-7c74-425f-9068-2e67b0895493.svg"></embed>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <div class="col-sm-6">
-      <section class="coding-widget text-center" id="currently-reading">
+      <section class="col-spacing text-center" id="currently-reading">
         <h3><i class="fa fa-bookmark-o fa-3x"></i></h3>
 	      <h3>I am currently reading <a href="http://shop.oreilly.com/product/0636920032151.do">JavaScript with Promises</a> by <span class="text--salient">Daniel Parker</span> (O'Reilly Press, 2015).</h3>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <section class="col-spacing text-center">
+        <div class="text-left">
+          <p>I love trying to understand how things work. In fact, I built this site entirely with vanilla JavaScript
+          instead of using any of the abundance of libraries that would have expedited the process of creating 
+          routers because I wanted to understand what goes into the creation of routing libraries. A lot of my
+          practice projects are like that, too. I want to understand the fundamentals before I reap the benefits of 
+          the magic.</p>
+          <p>Before I threw myself into coding, I had aspirations of becoming an academic. I completed a Master's degree
+          and was six years into a PhD (admittedly, 4 of those years I was floundering because I knew I didn't want
+          to devote myself to academia anymore, but I didn't know how to change the course that I had set myself
+          to for so long). Strangely enough, during this period, my research became more-and-more centered around
+          understanding the transmission and reception of information: in particular, how a string of bytes can come 
+          to be translated into something intelligable for human beings.</p>
+        </div>
       </section>
     </div>
   </div>
