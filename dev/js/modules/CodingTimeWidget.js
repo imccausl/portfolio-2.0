@@ -4,9 +4,9 @@ function CodingData($) {
 
     data.forEach((language, index) => {
       if (index === data.length - 1) {
-        output = output.concat(" and ", language)
+        output = output.concat(" and ", `<span class="text--salient">${language}</span>`)
       } else {
-        output = output.concat(language, ", ");
+        output = output.concat(`<span class="text--salient">${language}</span>`, ", ");
       }
     });
 
@@ -14,7 +14,7 @@ function CodingData($) {
   }
 
   function parseTimeDisplay(data) {
-    let time = `${data.hours} hours and ${data.minutes} minutes.`;
+    let time = `<span class="text--salient">${data.hours} hours</span> and <span class="text--salient">${data.minutes} minutes</span>.`;
 
     if (data.hours === 1) {
       time.replace("hours", "hour");
@@ -28,7 +28,7 @@ function CodingData($) {
   }
 
   function displayLangs(data, view) {
-    $(view).html(`This week I have been working with ${data}`);
+    $(view).html(`In the last 7 days I have been working with ${data}`);
   }
 
   function displayTime(data, view) {
@@ -37,28 +37,25 @@ function CodingData($) {
 
   const getLanguages = $.ajax({
       type: 'GET',
-      url: 'https://wakatime.com/share/@94ed6818-5129-4943-88f0-e9d705025e66/27145066-d578-4ee2-b668-8fb29885c9bd.json',
+      url: 'https://wakatime.com/share/@imccausl/aeba19b1-422b-4f7b-917d-af952fd01315.json',
       dataType: 'jsonp',
     });
 
   const getCodingTime = $.ajax({
      type: 'GET',
-     url: 'https://wakatime.com/share/@94ed6818-5129-4943-88f0-e9d705025e66/a49c0fe1-0842-4725-ad66-19337998a77c.json',
+     url: 'https://wakatime.com/share/@imccausl/e72d3d26-36fb-47e9-89ef-6f831dc89d8c.json',
      dataType: 'jsonp',
   });
   
   getLanguages.done(response => displayLangs(parseLangDisplay(response.data.map(language => language.name).filter(item => item !== 'Other')), "#coding-widget--langs"));
   
   getCodingTime.then(response => {
-    function parseTime(data, unit) {
-      return data.map(time => time.grand_total[unit]).reduce((acc, prev, curr) => acc + prev);
+    function parseTime(data) {
+      return data.map(time => time.grand_total.total_seconds).reduce((acc, prev, curr) => acc + prev);
     }
 
-    let codingHours = parseTime(response.data, 'hours');
-    let codingMinutes = parseTime(response.data, 'minutes');
+    let totalSeconds = parseTime(response.data);
         
-    return parseTimeDisplay({hours: codingHours + Math.floor(codingMinutes / 60), minutes: codingMinutes % 60});
+    return parseTimeDisplay({hours: Math.floor(totalSeconds / 60 / 60), minutes: totalSeconds % 60});
   }).then(response=>displayTime(response, "#coding-widget--time"));
-} 
-
-export default CodingData;
+}
