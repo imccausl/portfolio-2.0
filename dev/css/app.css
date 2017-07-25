@@ -16,14 +16,16 @@
   margin: 0 auto;
   padding: 0; }
 
-.coding-widget {
+.col-spacing {
   color: black;
   margin: 0 auto;
-  padding-top: 0em; }
-  .coding-widget h3 {
+  padding-top: 0.5em; }
+  .col-spacing h3, .col-spacing p {
     margin: 0;
-    padding: 0.3em 1em;
-    font-size: 1em; }
+    padding: 0.5em 1em;
+    font-size: 1.2em; }
+  .col-spacing p {
+    line-height: 1.5; }
 
 .coding-widget--button {
   padding-top: 0.5em; }
