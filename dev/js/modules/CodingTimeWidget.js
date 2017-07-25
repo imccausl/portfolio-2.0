@@ -55,7 +55,9 @@ function CodingData($) {
     }
 
     let totalSeconds = parseTime(response.data);
-        
-    return parseTimeDisplay({hours: Math.floor(totalSeconds / 60 / 60), minutes: totalSeconds % 60});
+    let hours = Math.floor((totalSeconds / 60) / 60);
+    let minutes = Math.floor((totalSeconds / 60) - (hours * 60));
+
+    return parseTimeDisplay({hours, minutes});
   }).then(response=>displayTime(response, "#coding-widget--time"));
 }
