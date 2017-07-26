@@ -87,7 +87,7 @@ const ProjectsList = (query) => {
     }
   }
 
-  function sortData(model, propery) {
+  function sortData(model, property) {
     model = model || cache;
     property = property || "created_at";
 
