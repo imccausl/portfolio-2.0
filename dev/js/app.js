@@ -18,5 +18,3 @@ Router.add(/about/,()=>{
 })
 
 .check('/about').listen();
-
-ListProjects();
