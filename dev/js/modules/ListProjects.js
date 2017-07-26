@@ -80,7 +80,12 @@ const ProjectsList = (query) => {
         return item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1;
       });
      
-      searchView = makeView(searchModel);
+      if (searchView.length === 0) {
+        searchView[0] = `<h4 class="text-center">Search query "${searchQuery}" returned no results...</h4>`;
+      } else {
+        searchView = makeView(searchModel);
+      }
+      
       render(searchView, "#project-view");
     }
   }
