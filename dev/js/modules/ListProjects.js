@@ -75,10 +75,7 @@ const ProjectsList = (query) => {
     model = model || cache;
 
     if (hasData) {
-      searchModel = model.filter((item, index) => {
-        console.log(searchQuery.toLowerCase(), (item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1));
-        return item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1;
-      });
+      searchModel = model.filter((item, index) => item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1);
      
       if (searchModel.length === 0) {
         searchView[0] = `<h4 class="text-center">Search query "${searchQuery}" returned no results...</h4>`;
@@ -90,8 +87,13 @@ const ProjectsList = (query) => {
     }
   }
 
-  function sortData(model) {
+  function sortData(model, propery) {
+    model = model || cache;
+    property = property || "created_at";
 
+    if (hasData && model && property) {
+      return model.sort((a, b) => Date.parse(b[property]) - Date.parse(a[property]));
+    }
   }
 
   function render(vw, anchor) {
@@ -104,7 +106,7 @@ const ProjectsList = (query) => {
     cache = parseData(response);
     hasData = true;
     
-    view = makeView(cache);
+    view = makeView(sortData(cache));
     render(view, '#project-view');
 
     console.log("Data loaded:", hasData);
@@ -116,12 +118,9 @@ const ProjectsList = (query) => {
 
   function setListener() {
     const inputField = document.querySelector("#projects--search");
-    console.log(inputField);
 
     inputField.addEventListener("input", (event)=>{
       let input = inputField.value;
-
-      console.log(inputField.value);
 
       if (input.length > 0 && hasData) {
         searchData(input);
@@ -134,6 +133,7 @@ const ProjectsList = (query) => {
 
   return {
     searchData,
+    sortData,
   }
 
 };
