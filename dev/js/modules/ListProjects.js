@@ -35,18 +35,6 @@ const ProjectsList = (query) => {
     return parsedData;
   }
 
-  function getReadme(url) {
-    return new Promise((resolve, reject) => {
-      const req = new XMLHttpRequest();
-      url = url + "/readme";
-
-      req.onload = resolve(req.responseText);
-      req.onerror = reject(req.statusText);
-      req.open("GET", url, true);
-      req.send();
-    });
-  }
-
   function makeView(currState) {
     let view = [];
     let iterator = 0;
@@ -80,8 +68,21 @@ const ProjectsList = (query) => {
     return view;
   }
 
-  function searchData(model) {
+  function searchData(searchQuery, model) {
+    let searchModel = [],
+        searchView = [];
 
+    model = model || cache;
+
+    if (hasData) {
+      searchModel = model.filter((item, index) => {
+        console.log(searchQuery.toLowerCase(), (item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1));
+        return item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1;
+      });
+     
+      searchView = makeView(searchModel);
+      render(searchView, "#project-view");
+    }
   }
 
   function sortData(model) {
@@ -99,13 +100,35 @@ const ProjectsList = (query) => {
     hasData = true;
     
     view = makeView(cache);
-    render(view, "#project-view");
+    render(view, '#project-view');
 
-    console.log(view);
+    console.log("Data loaded:", hasData);
+    setListener();    
   }) 
   .catch(err => {
     console.log(err);
   });
 
+  function setListener() {
+    const inputField = document.querySelector("#projects--search");
+    console.log(inputField);
+
+    inputField.addEventListener("input", (event)=>{
+      let input = inputField.value;
+
+      console.log(inputField.value);
+
+      if (input.length > 0 && hasData) {
+        searchData(input);
+      } else {
+        let view = makeView(cache);
+        render(view, "#project-view");
+      }
+    }, true);
+  }
+
+  return {
+    searchData,
+  }
 
 };
