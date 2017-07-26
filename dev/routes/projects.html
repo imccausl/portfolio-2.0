@@ -2,14 +2,22 @@
   <div class="text-center">
     <form action="" class="form-inline">
       <div class="btn-group btn-group-sm" role="group" aria-label="...">
-       <button type="button" class="btn btn-default">Ascending</button>
-       <button type="button" class="btn btn-default">Descending</button>
-       <button type="button" class="btn btn-default">Favourite</button>
+       <button type="button" class="btn btn-default">Date Created</button>
+       <button type="button" class="btn btn-default">Last Updated</button>
+       <button type="button" class="btn btn-default">In Progress</button>
       </div>
 
       <div class="form-group">
         <input type="search" id="projects--search" class="form-control input-sm" placeholder="Search">
       </div>
     </form>
+
+
+    <section id="project-view" class="row"></section>
   </div>
 </section>
+
+<footer class="route--footer"></footer>
+
+<script src="dev/js/modules/ListProjects.js"></script>
+<script>ProjectsList();</script>
