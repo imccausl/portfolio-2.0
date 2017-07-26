@@ -1,4 +1,5 @@
 import Router from './modules/Router';
+import ListProjects from './modules/ListProjects';
 
 Router.config({mode:'history'});
 
@@ -17,3 +18,5 @@ Router.add(/about/,()=>{
 })
 
 .check('/about').listen();
+
+ListProjects();
