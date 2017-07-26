@@ -110,14 +110,16 @@ const ProjectsList = (query) => {
     render(view, '#project-view');
 
     console.log("Data loaded:", hasData);
-    setListener();    
+    setListeners();    
   }) 
   .catch(err => {
     console.log(err);
   });
 
-  function setListener() {
+  function setListeners() {
     const inputField = document.querySelector("#projects--search");
+    const sortByCreated = document.querySelector("#projects--sort-created");
+    const sortByUpdated = document.querySelector("#projects--sort-updated");
 
     inputField.addEventListener("input", (event)=>{
       let input = inputField.value;
@@ -129,6 +131,32 @@ const ProjectsList = (query) => {
         render(view, "#project-view");
       }
     }, true);
+
+    sortByCreated.addEventListener("click", sortHandler, true);
+    sortByUpdated.addEventListener("click", sortHandler, true);
+
+    function sortHandler(event) {
+      console.log(event);
+      const sortBy = event.target.dataset.property;
+      const whichClicked = event.srcElement.id;
+      let sortedModel = [], sortedView = [];
+
+      if (whichClicked === "projects--sort-created") {
+        sortByCreated.classList.add("active");
+        sortByUpdated.classList.remove("active");
+      } else {
+        sortByUpdated.classList.add("active");
+        sortByCreated.classList.remove("active");
+      }
+
+      console.log(hasData, sortBy);
+
+      if (hasData) {
+        sortedModel = sortData(cache, sortBy);
+        sortedView = makeView(sortedModel);
+        render(sortedView, "#project-view");
+      }
+    }
   }
 
   return {
