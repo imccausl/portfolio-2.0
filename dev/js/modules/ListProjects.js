@@ -78,7 +78,7 @@ const ProjectsList = (query) => {
       searchModel = model.filter((item, index) => item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1);
      
       if (searchModel.length === 0) {
-        searchView[0] = `<h4 class="text-center">Search query "${searchQuery}" returned no results...</h4>`;
+        searchView[0] = `<br><h4 class="text-center">Search query "${searchQuery}" returned no results...</h4>`;
       } else {
         searchView = makeView(searchModel);
       }
