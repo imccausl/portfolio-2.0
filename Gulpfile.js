@@ -10,6 +10,7 @@ const gulpWebpack = require('webpack-stream');
 const webpack = require('webpack');
 const mywpConfig = require('./webpack.config');
 const concat = require('gulp-concat');
+const ghPages = require('gulp-gh-pages');
 
 const SASS_PATH = 'dev/scss/**/*.scss';
 
@@ -64,7 +65,7 @@ gulp.task('watch', ['webpack', 'browserSync', 'sass'], ()=>{
 
 gulp.task('build', (callback) => {
   runSequence('clean:dist',
-    ['webpack', 'sass', 'useref', 'fonts'],
+    ['webpack', 'sass', 'useref', 'fonts', 'deploy'],
     callback
   );
 });
@@ -73,4 +74,15 @@ gulp.task('default', (callback) => {
   runSequence(['webpack', 'sass', 'browserSync', 'watch'],
     callback
   );
-})
+});
+
+gulp.task('deploy', () => {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages([
+      {
+        origin: "upstream",
+        branch: "master",
+        message: ""
+      }
+    ]));
+});
