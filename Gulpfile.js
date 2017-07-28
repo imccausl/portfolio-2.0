@@ -12,12 +12,11 @@ const mywpConfig = require('./webpack.config');
 const concat = require('gulp-concat');
 const ghPages = require('gulp-gh-pages');
 
-const SASS_PATH = 'dev/scss/**/*.scss';
+const SASS_PATH = 'dev/scss/**/app.scss';
 
 gulp.task('sass', ()=>{
   return gulp.src(SASS_PATH)
     .pipe(sass())
-    .pipe(concat('app.css'))
     .pipe(gulp.dest('dev/css'))
     .pipe(browserSync.reload({
       stream: true
