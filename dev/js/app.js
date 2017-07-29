@@ -31,8 +31,8 @@ Router.add(/about/,()=>{
   });
 })
 
-.add(/blog/, ()=>{
-  console.log("Blog");
+.add(/resume/, ()=>{
+  $('#main-view').load('dev/routes/resume.html');
 })
 
 .check(Router.getFragment()).listen();
