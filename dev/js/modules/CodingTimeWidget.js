@@ -47,7 +47,7 @@ function CodingData($) {
      dataType: 'jsonp',
   });
   
-  getLanguages.done(response => displayLangs(parseLangDisplay(response.data.map(language => language.name).filter(item => item !== 'Other')), "#coding-widget--langs"));
+  getLanguages.then(response => displayLangs(parseLangDisplay(response.data.map(language => language.name).filter(item => item !== 'Other')), "#coding-widget--langs"));
   
   getCodingTime.then(response => {
     function parseTime(data) {
@@ -61,3 +61,5 @@ function CodingData($) {
     return parseTimeDisplay({hours, minutes});
   }).then(response=>displayTime(response, "#coding-widget--time"));
 }
+
+export default CodingData;
