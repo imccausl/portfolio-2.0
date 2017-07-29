@@ -6,7 +6,7 @@
   TODO: Remove phone number and address from displayed resume
   TODO: Add Firefox compatibility to click events on projects page
   TODO: Add number of projects to search/sort area (including, when searching, number of projects returned from search out of total number of projects)
-  TODO: Add one more colum to about page highlighting OS experience (Linux, Mac, Windows/WSL)?
+  TODO: Add one more column to about page highlighting OS experience (Linux, Mac, Windows/WSL)?
   TODO: Deploy to gh-pages!
 */
 import Router from './modules/Router';
@@ -14,7 +14,7 @@ import CodingTimeWidget from './modules/CodingTimeWidget';
 import ReadingList from './modules/ReadingList';
 import ListProjects from './modules/ListProjects';
 import Fetch from './modules/Fetch';
-
+import key from '../../dist/api.key';
 
 Router.config({mode:'history'});
 
