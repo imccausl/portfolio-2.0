@@ -214,6 +214,11 @@ a:hover {
 .group--sort {
   margin: 0 auto; }
 
+#resume--view {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh; }
+
 .nav--main {
   position: relative;
   width: 100%;
