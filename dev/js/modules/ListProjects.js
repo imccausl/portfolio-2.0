@@ -165,3 +165,5 @@ const ProjectsList = (query) => {
   }
 
 };
+
+export default ProjectsList;
