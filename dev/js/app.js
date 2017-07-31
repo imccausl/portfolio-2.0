@@ -1,5 +1,4 @@
 /*
-  TODO: Refactor some view rendering code for less repetition.
   TODO: Eventually create smaller, fixed header/nav menu when scroll exeeds the main header. (not a priority for this version).
   TODO: Configure webpack for cache-busting 
   TODO: Finish/clean up about page bio
