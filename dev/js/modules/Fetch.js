@@ -12,13 +12,9 @@ const Fetch = (uri, type, noCORS) => {
   } else {
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = () => {
-        if (xhr.status === 200) {
-          resolve(xhr.responseText)
-        } else {
-          reject(xhr.statusText);
-        }
-      };
+      xhr.onload = () => resolve(xhr.responseText);
+      xhr.onerror = () => reject(xhr.statusText);
+      
       xhr.open("GET", uri, true);
       xhr.send();
     });
