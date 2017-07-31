@@ -60,8 +60,6 @@ const Router = {
   check(f) {
     let fragment = f || this.getFragment();
 
-    console.log(fragment);
-
     this.routes.forEach((route, index)=>{
       let match = fragment.match(route.re);
 
