@@ -11,25 +11,50 @@ import CodingTimeWidget from './modules/CodingTimeWidget';
 import ReadingList from './modules/ReadingList';
 import ListProjects from './modules/ListProjects';
 import Fetch from './modules/Fetch';
-import key from '../../dist/api.key';
+import key from '../api.key';
 
-Router.config({mode:'history'});
+function setListeners() {
+  const navLinks = document.getElementById('portfolio--nav');
 
-Router.add(/about/,()=>{
-  $('#main-view').load('dev/routes/about.html', ()=>{
-    CodingTimeWidget($);
-    ReadingList(Fetch, key);
-  })
-})
+  navLinks.addEventListener('click', (event) => {
+    const route = event.target.getAttribute('data-route');
 
-.add(/projects/, ()=>{
-  $('#main-view').load('dev/routes/projects.html', ()=>{
-    ListProjects();
-  });
-})
+    if (history.pushState && route !== '/blog' || Router.mode === 'history') {
+      event.preventDefault();
+      Router.navigate(route);
+    }
+  }, true);
+}
 
-.add(/resume/, ()=>{
-  $('#main-view').load('dev/routes/resume.html');
-})
+function initalizeRoutes() {
+  if (!Router.routes[0]) {
+    Router.config({mode:'hash'});
 
-.check(Router.getFragment()).listen();
+    Router.add(/about/,()=>{
+      $('#main-view').load('routes/about.html', ()=>{
+        CodingTimeWidget($);
+        ReadingList(Fetch, key);
+      });
+    })
+
+    .add(/projects/, ()=>{
+      $('#main-view').load('routes/projects.html', ()=>{
+        ListProjects();
+      });
+    })
+
+    .add(/resume/, ()=>{
+      $('#main-view').load('routes/resume.html');
+    })
+
+    .add(/\*/, () => {
+      Router.navigate('/about');
+    });
+  }
+  Router.navigate('/about');
+}
+
+initalizeRoutes(); 
+setListeners(); // use javascript  to handle site navigation unless browser doesn't support history API
+
+Router.check(Router.getFragment()).listen();
