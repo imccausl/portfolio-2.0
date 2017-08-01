@@ -3,3 +3,4 @@ bower_components/
 dist/
 .vscode/
 dev/css/
+dev/api.key
