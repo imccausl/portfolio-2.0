@@ -10,3 +10,4 @@ dev/js/bundle.js
 dev/js/site.js
 *.log
 .publish/
+dev/index.html
