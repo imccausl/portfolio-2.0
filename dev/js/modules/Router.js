@@ -7,9 +7,10 @@ const Router = {
 
   config(options) {
     this.mode = options && options.mode && options.mode == 'history' 
-           && !!(history.pushUpdate) ? 'history' : 'hash';
+           && !!(history.pushState) ? 'history' : 'hash';
     this.root = options && options.root  ? '/' + this.clearSlashes(options.root) + '/' : '/';
 
+    console.log(this.mode);
     return this;
   },
 
@@ -79,7 +80,7 @@ const Router = {
     let fn = () => {
       if (current !== self.getFragment()) {
         current = self.getFragment();
-        self.check(current);
+        self.check(current); 
       }
     }
     clearInterval(this.interval);
