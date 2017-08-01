@@ -1,7 +1,7 @@
 import fetch from './Fetch';
 
 const ProjectsList = (query) => {
-  const searchQuery = query || "https://api.github.com/search/repositories?q=topic:portfolio+user:imccausl";
+  const searchQuery = query || "https://api.github.com/search/repositories?q=topic:portfolio+user:imccausl&sort=created";
   let hasData = false;
   let cache = [];
 
@@ -46,7 +46,7 @@ const ProjectsList = (query) => {
                     <p class="portfolio--description text-center">${item.description}</p>
                     <a class="btn btn-default btn-sm" href="${item.html_url}" role="button">View Source</a> 
                     <a class="btn btn-default btn-sm ${(item.homepage) ? '' : 'disabled'}" href="${item.homepage}" role="button">View Project</a>
-                  </div>`
+                    </div>`
 
       view.push(itemView);
     });
@@ -92,7 +92,18 @@ const ProjectsList = (query) => {
     property = property || "created_at";
 
     if (hasData && model && property) {
-      return model.sort((a, b) => Date.parse(b[property]) - Date.parse(a[property]));
+      return model.sort((a, b) => {
+        let date1 = new Date(a[property]),
+            date2 = new Date(b[property]);
+
+        if (date1 < date2) {
+          return (property === 'created_at') ? 1 : -1;
+        } else if (date1 > date2) {
+          return (property === 'created_at') ? -1 : 1;
+        } else {
+          return 0;
+        }
+      });
     }
   }
 
