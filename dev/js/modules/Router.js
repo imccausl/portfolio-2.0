@@ -10,7 +10,6 @@ const Router = {
            && !!(history.pushState) ? 'history' : 'hash';
     this.root = options && options.root  ? '/' + this.clearSlashes(options.root) + '/' : '/';
 
-    console.log(this.mode);
     return this;
   },
 

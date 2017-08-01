@@ -19,7 +19,7 @@ function setListeners() {
   navLinks.addEventListener('click', (event) => {
     const route = event.target.getAttribute('data-route');
 
-    if (history.pushState && route !== '/blog' || Router.mode === 'history') {
+    if (history.pushState && route !== '/blog' || Router.mode === 'history') { // only use javascript click handler for links if 'history' mode is enabled for the router
       event.preventDefault();
       Router.navigate(route);
     }
@@ -27,7 +27,7 @@ function setListeners() {
 }
 
 function initalizeRoutes() {
-  if (!Router.routes[0]) {
+  if (!Router.routes[0]) {  // check if any routes exist
     Router.config({mode:'hash'});
 
     Router.add(/about/,()=>{

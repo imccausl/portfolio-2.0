@@ -6,7 +6,6 @@ const ReadingList = (fetch, key) => {
     const currReadingURL = `https://www.goodreads.com/review/list/15487566.xml?key=${key}&id=15487566-ian-mccausland&v=2&shelf=${shelf}`;
 
     fetch(currReadingURL, "xml", true).then(response =>{
-      console.log(response);
       const book = response.getElementsByTagName("book")[0];
       if(book !== undefined) {
         const bookTitle = book.childNodes[11].textContent;
