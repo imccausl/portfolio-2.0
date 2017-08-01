@@ -4,3 +4,9 @@ dist/
 .vscode/
 dev/css/
 dev/api.key
+CNAME
+dev/index.html
+dev/js/bundle.js
+dev/js/site.js
+*.log
+.publish/
