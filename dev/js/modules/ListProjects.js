@@ -63,7 +63,7 @@ const ProjectsList = (query) => {
       projects = "Projects";
     }
 
-    return `<strong>${howMany}</strong> ${projects}`;
+    return `Displaying <strong>${howMany}</strong> of ${cache.length} ${projects}`;
   }
 
   function searchData(searchQuery, model) {
