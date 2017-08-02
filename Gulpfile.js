@@ -70,6 +70,11 @@ gulp.task('images', ()=>{
     .pipe(gulp.dest('dist/img'));
 });
 
+gulp.task('build:moveCNAME', ()=>{
+  return gulp.src('dev/CNAME')
+    .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('files', ()=>{
   return gulp.src('dev/files/**/*')
     .pipe(gulp.dest('dist/files'));
@@ -109,7 +114,7 @@ gulp.task('watch', ['webpack', 'browserSync', 'sass'], ()=>{
 
 gulp.task('build', (callback) => {
   runSequence('clean:dist',
-    ['webpack', 'sass', 'fonts', 'images', 'routes', 'files', 'setToIndex'], 'useref:build', 'removeAppHTML', 'moveBundle',
+    ['webpack', 'sass', 'fonts', 'images', 'routes', 'files', 'setToIndex'], 'useref:build', 'removeAppHTML', 'moveBundle', 'build:moveCNAME',
     callback
   );
 });
