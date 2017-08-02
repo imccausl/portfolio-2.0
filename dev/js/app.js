@@ -30,8 +30,8 @@ function initalizeRoutes() {
   if (!Router.routes[0]) {  // check if any routes exist
     Router.config({mode:'hash'});
 
-    Router.add(/about/,()=>{
-      $('#main-view').load('routes/about.html', ()=>{
+    Router.add(/stats/,()=>{
+      $('#main-view').load('routes/stats.html', ()=>{
         CodingTimeWidget($);
         ReadingList(Fetch, key);
       });
@@ -48,10 +48,10 @@ function initalizeRoutes() {
     })
 
     .add(/\*/, () => {
-      Router.navigate('/about');
+      Router.navigate('/stats');
     });
   }
-  Router.navigate('/about');
+  Router.navigate('/stats');
 }
 
 initalizeRoutes(); 
