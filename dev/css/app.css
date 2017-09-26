@@ -135,7 +135,8 @@ hr {
   margin: 0 auto;
   padding-top: 1em;
   max-width: 405px; }
-  .hero h1, .hero h2 {
+  .hero h1,
+  .hero h2 {
     padding: 0;
     margin: 0; }
 
@@ -153,7 +154,8 @@ hr {
   color: black;
   margin: 0 auto;
   padding-top: 0.2em; }
-  .col-spacing h3, .col-spacing p {
+  .col-spacing h3,
+  .col-spacing p {
     margin: 0;
     padding: 0.5em 1em; }
   .col-spacing h3 {
@@ -182,7 +184,8 @@ hr {
   max-width: 320px;
   margin: 0.2em auto; }
 
-#projects--sort-created, #projects--sort-updated {
+#projects--sort-created,
+#projects--sort-updated {
   margin: 0.2em -1px; }
 
 .group--sort {
