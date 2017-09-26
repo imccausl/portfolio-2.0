@@ -6,55 +6,67 @@
   TODO: Add one more column to about page highlighting OS experience (Linux, Mac, Windows/WSL)?
   TODO: Deploy to gh-pages!
 */
-import Router from './modules/Router';
-import CodingTimeWidget from './modules/CodingTimeWidget';
-import ReadingList from './modules/ReadingList';
-import ListProjects from './modules/ListProjects';
-import Fetch from './modules/Fetch';
-import key from '../api.key';
+import Router from "./modules/Router";
+import CodingTimeWidget from "./modules/CodingTimeWidget";
+import ReadingList from "./modules/ReadingList";
+import ListProjects from "./modules/ListProjects";
+import Fetch from "./modules/Fetch";
+import key from "../api.key";
 
 function setListeners() {
-  const navLinks = document.getElementById('portfolio--nav');
+  const navLinks = document.getElementById("portfolio--nav");
 
-  navLinks.addEventListener('click', (event) => {
-    const route = event.target.getAttribute('data-route');
+  navLinks.addEventListener(
+    "click",
+    event => {
+      const route = event.target.getAttribute("data-route");
 
-    if (history.pushState && route !== '/blog' || Router.mode === 'history') { // only use javascript click handler for links if 'history' mode is enabled for the router
-      event.preventDefault();
-      Router.navigate(route);
-    }
-  }, true);
+      if (
+        (history.pushState && route !== "/blog") ||
+        Router.mode === "history"
+      ) {
+        // only use javascript click handler for links if 'history' mode is enabled for the router
+        event.preventDefault();
+        Router.navigate(route);
+      }
+    },
+    true
+  );
 }
 
 function initalizeRoutes() {
-  if (!Router.routes[0]) {  // check if any routes exist
-    Router.config({mode:'hash'});
+  let currentRoute = `/${Router.getFragment()}`;
+  if (currentRoute === "/") {
+    currentRoute = "/stats";
+  }
 
-    Router.add(/stats/,()=>{
-      $('#main-view').load('routes/stats.html', ()=>{
+  if (!Router.routes[0]) {
+    // check if any routes exist
+    Router.config({ mode: "hash" });
+
+    Router.add(/stats/, () => {
+      $("#main-view").load("routes/stats.html", () => {
         CodingTimeWidget($);
         ReadingList(Fetch, key);
       });
     })
-
-    .add(/projects/, ()=>{
-      $('#main-view').load('routes/projects.html', ()=>{
-        ListProjects();
+      .add(/projects/, () => {
+        $("#main-view").load("routes/projects.html", () => {
+          ListProjects();
+        });
+      })
+      .add(/resume/, () => {
+        $("#main-view").load("routes/resume.html");
+      })
+      .add(/\*/, () => {
+        Router.navigate("/stats");
       });
-    })
-
-    .add(/resume/, ()=>{
-      $('#main-view').load('routes/resume.html');
-    })
-
-    .add(/\*/, () => {
-      Router.navigate('/stats');
-    });
   }
-  Router.navigate('/stats');
+
+  Router.navigate(currentRoute);
 }
 
-initalizeRoutes(); 
+initalizeRoutes();
 setListeners(); // use javascript  to handle site navigation unless browser doesn't support history API
 
-Router.check(Router.getFragment()).listen();
+Router.check().listen();
