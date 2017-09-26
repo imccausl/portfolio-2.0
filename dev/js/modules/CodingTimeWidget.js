@@ -1,12 +1,30 @@
-function CodingData($) { 
+import isLocalStorageAvailable, {
+  saveToLocalStorage
+} from "../util/localStorage";
+
+function CodingData($) {
+  const CODING_TIME = "codingTime";
+  const CODING_LANGS = "codingLangs";
+  const CODING_TIME_VIEW = "#coding-widget--time";
+  const CODING_LANGS_VIEW = "#coding-widget--langs";
+
+  let codingTime = undefined;
+  let codingLangs = undefined;
+
   function parseLangDisplay(data) {
     let output = "";
 
     data.forEach((language, index) => {
       if (index === data.length - 1) {
-        output = output.concat(" and ", `<span class="text--salient">${language}</span>`)
+        output = output.concat(
+          " and ",
+          `<span class="text--salient">${language}</span>`
+        );
       } else {
-        output = output.concat(`<span class="text--salient">${language}</span>`, ", ");
+        output = output.concat(
+          `<span class="text--salient">${language}</span>`,
+          ", "
+        );
       }
     });
 
@@ -29,37 +47,63 @@ function CodingData($) {
 
   function displayLangs(data, view) {
     $(view).html(`In the last 7 days I have been working with ${data}`);
+    saveToLocalStorage(CODING_LANGS, data, codingLangs);
   }
 
   function displayTime(data, view) {
-    $(view).html(`for a total of ${data}`);  
+    $(view).html(`for a total of ${data}`);
+    saveToLocalStorage(CODING_TIME, data, codingTime);
   }
 
   const getLanguages = $.ajax({
-      type: 'GET',
-      url: 'https://wakatime.com/share/@imccausl/aeba19b1-422b-4f7b-917d-af952fd01315.json',
-      dataType: 'jsonp',
-    });
+    type: "GET",
+    url:
+      "https://wakatime.com/share/@imccausl/aeba19b1-422b-4f7b-917d-af952fd01315.json",
+    dataType: "jsonp"
+  });
 
   const getCodingTime = $.ajax({
-     type: 'GET',
-     url: 'https://wakatime.com/share/@imccausl/e72d3d26-36fb-47e9-89ef-6f831dc89d8c.json',
-     dataType: 'jsonp',
+    type: "GET",
+    url:
+      "https://wakatime.com/share/@imccausl/e72d3d26-36fb-47e9-89ef-6f831dc89d8c.json",
+    dataType: "jsonp"
   });
-  
-  getLanguages.then(response => displayLangs(parseLangDisplay(response.data.map(language => language.name).filter(item => item !== 'Other')), "#coding-widget--langs"));
-  
-  getCodingTime.then(response => {
-    function parseTime(data) {
-      return data.map(time => time.grand_total.total_seconds).reduce((acc, prev, curr) => acc + prev);
-    }
 
-    let totalSeconds = parseTime(response.data);
-    let hours = Math.floor((totalSeconds / 60) / 60);
-    let minutes = Math.floor((totalSeconds / 60) - (hours * 60));
+  // module exection begins here.
+  if (isLocalStorageAvailable()) {
+    codingTime = localStorage.getItem(CODING_TIME);
+    codingLangs = localStorage.getItem(CODING_LANGS);
 
-    return parseTimeDisplay({hours, minutes});
-  }).then(response=>displayTime(response, "#coding-widget--time"));
+    displayLangs(codingLangs, CODING_LANGS_VIEW);
+    displayTime(codingTime, CODING_TIME_VIEW);
+  }
+
+  getLanguages.then(response =>
+    displayLangs(
+      parseLangDisplay(
+        response.data
+          .map(language => language.name)
+          .filter(item => item !== "Other")
+      ),
+      CODING_LANGS_VIEW
+    )
+  );
+
+  getCodingTime
+    .then(response => {
+      function parseTime(data) {
+        return data
+          .map(time => time.grand_total.total_seconds)
+          .reduce((acc, prev, curr) => acc + prev);
+      }
+
+      let totalSeconds = parseTime(response.data);
+      let hours = Math.floor(totalSeconds / 60 / 60);
+      let minutes = Math.floor(totalSeconds / 60 - hours * 60);
+
+      return parseTimeDisplay({ hours, minutes });
+    })
+    .then(response => displayTime(response, CODING_TIME_VIEW));
 }
 
 export default CodingData;
