@@ -7,7 +7,11 @@
 	
 	<title>Ian McCausland | Web Developer</title>
 
-	<link rel="stylesheet" href="css/style.css">
+	<!-- build:css css/style.css -->
+	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+	<!--endbuild -->
 </head>
 <body>
 	<header class="site-main">
@@ -54,6 +58,9 @@
   	ga('send', 'pageview');
 	</script>
 
-	<script src="js/site.js"></script>
-<script type="text/javascript" src="js/bundle.js?8f71938146426f6576c4"></script></body>
+	<!-- build:js js/site.js -->
+	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<!-- endbuild -->
+<script type="text/javascript" src="js/bundle.js?25040f21f9f798ef0ce5"></script></body>
 </html>
