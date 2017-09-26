@@ -3,7 +3,8 @@
   padding-top: 1em;
   max-width: 405px;
 
-  h1, h2 {
+  h1,
+  h2 {
     padding: 0;
     margin: 0;
   }
@@ -16,7 +17,7 @@
   padding-bottom: 0.5em;
 }
 
-.box {  
+.box {
   position: relative;
   margin: 0 auto;
   padding: 0;
@@ -26,7 +27,8 @@
   color: black;
   margin: 0 auto;
   padding-top: 0.2em;
-  h3, p {
+  h3,
+  p {
     margin: 0;
     padding: 0.5em 1em;
   }
@@ -65,7 +67,8 @@
   margin: 0.2em auto;
 }
 
-#projects--sort-created, #projects--sort-updated {
+#projects--sort-created,
+#projects--sort-updated {
   margin: 0.2em -1px;
 }
 
@@ -80,7 +83,6 @@
 }
 
 #main-view {
-  
   section {
     margin-top: 0.8em;
     div {
