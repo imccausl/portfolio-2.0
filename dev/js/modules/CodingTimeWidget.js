@@ -74,8 +74,10 @@ function CodingData($) {
     codingTime = localStorage.getItem(CODING_TIME);
     codingLangs = localStorage.getItem(CODING_LANGS);
 
-    displayLangs(codingLangs, CODING_LANGS_VIEW);
-    displayTime(codingTime, CODING_TIME_VIEW);
+    if (codingTime && codingLangs) {
+      displayLangs(codingLangs, CODING_LANGS_VIEW);
+      displayTime(codingTime, CODING_TIME_VIEW);
+    }
   }
 
   getLanguages.then(response =>
