@@ -1,13 +1,22 @@
-import fetch from './Fetch';
+import fetch from "./Fetch";
 
-const ProjectsList = (query) => {
-  const searchQuery = query || "https://api.github.com/search/repositories?q=topic:portfolio+user:imccausl&sort=created";
+const ProjectsList = query => {
+  const searchQuery =
+    query ||
+    "https://api.github.com/search/repositories?q=topic:portfolio+user:imccausl&sort=created";
   let hasData = false;
   let cache = [];
 
   function parseData(data) {
     let parsedData = data.items.map(project => {
-      let {name, html_url, description, created_at, updated_at, homepage} = project;
+      let {
+        name,
+        html_url,
+        description,
+        created_at,
+        updated_at,
+        homepage
+      } = project;
       let newObj = {
         name,
         html_url,
@@ -32,7 +41,7 @@ const ProjectsList = (query) => {
       let newTitle = [];
 
       temp.forEach(word => {
-        word = word.substr(0,1).toUpperCase() + word.substr(1,word.length);
+        word = word.substr(0, 1).toUpperCase() + word.substr(1, word.length);
         newTitle.push(word);
       });
 
@@ -45,8 +54,10 @@ const ProjectsList = (query) => {
                     <img src="http://raw.githubusercontent.com/imccausl/${item.name}/master/screenshot.png" width="95%" height="95%">
                     <p class="portfolio--description text-center">${item.description}</p>
                     <a class="btn btn-default btn-sm" href="${item.html_url}" role="button">View Source</a> 
-                    <a class="btn btn-default btn-sm ${(item.homepage) ? '' : 'disabled'}" href="${item.homepage}" role="button">View Project</a>
-                    </div>`
+                    <a class="btn btn-default btn-sm ${item.homepage
+                      ? ""
+                      : "disabled"}" href="${item.homepage}" role="button">View Project</a>
+                    </div>`;
 
       view.push(itemView);
     });
@@ -55,12 +66,10 @@ const ProjectsList = (query) => {
   }
 
   function numProjView(howMany) {
-    let projects = "";
+    let projects = "Projects";
 
-    if (howMany === 1) {
+    if (cache.length === 1) {
       projects = "Project";
-    } else {
-      projects = "Projects";
     }
 
     return `Displaying <strong>${howMany}</strong> of ${cache.length} ${projects}`;
@@ -68,12 +77,15 @@ const ProjectsList = (query) => {
 
   function searchData(searchQuery, model) {
     let searchModel = [],
-        searchView = [];
+      searchView = [];
 
     model = model || cache;
 
     if (hasData) {
-      searchModel = model.filter((item, index) => item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1);
+      searchModel = model.filter(
+        (item, index) =>
+          item.name.toLowerCase().indexOf(searchQuery.toLowerCase()) > -1
+      );
       let howMany = searchModel.length;
 
       if (howMany === 0) {
@@ -94,12 +106,12 @@ const ProjectsList = (query) => {
     if (hasData && model && property) {
       return model.sort((a, b) => {
         let date1 = new Date(a[property]),
-            date2 = new Date(b[property]);
+          date2 = new Date(b[property]);
 
         if (date1 < date2) {
-          return (property === 'created_at') ? 1 : -1;
+          return property === "created_at" ? 1 : -1;
         } else if (date1 > date2) {
-          return (property === 'created_at') ? -1 : 1;
+          return property === "created_at" ? -1 : 1;
         } else {
           return 0;
         }
@@ -109,44 +121,49 @@ const ProjectsList = (query) => {
 
   function render(vw, anchor) {
     let anchorElem = document.querySelector(anchor);
-    let view = (vw.constructor === Array) ? vw.join("") : vw;
+    let view = vw.constructor === Array ? vw.join("") : vw;
 
     if (!anchorElem) {
       throw new Error("Anchor element passed to render() does not exist!");
     }
-    
+
     anchorElem.innerHTML = view;
   }
 
-  fetch(searchQuery).then(response => {
-    cache = parseData(JSON.parse(response));
-    hasData = true;
-    
-    render(makeProjectsView(sortData(cache)), '#project-view');
-    render(numProjView(cache.length), '#project-num-view');
+  fetch(searchQuery)
+    .then(response => {
+      cache = parseData(JSON.parse(response));
+      hasData = true;
 
-    setListeners();    
-  }) 
-  .catch(err => {
-    console.log(err);
-  });
+      render(makeProjectsView(sortData(cache)), "#project-view");
+      render(numProjView(cache.length), "#project-num-view");
+
+      setListeners();
+    })
+    .catch(err => {
+      console.log(err);
+    });
 
   function setListeners() {
     const inputField = document.querySelector("#projects--search");
     const sortByCreated = document.querySelector("#projects--sort-created");
     const sortByUpdated = document.querySelector("#projects--sort-updated");
 
-    inputField.addEventListener("input", (event)=>{
-      let input = inputField.value;
+    inputField.addEventListener(
+      "input",
+      event => {
+        let input = inputField.value;
 
-      if (input.length > 0 && hasData) {
-        searchData(input);
-      } else {
-        let view = makeProjectsView(cache);
-        render(view, "#project-view");
-        render(numProjView(view.length), "#project-num-view");
-      }
-    }, true);
+        if (input.length > 0 && hasData) {
+          searchData(input);
+        } else {
+          let view = makeProjectsView(cache);
+          render(view, "#project-view");
+          render(numProjView(view.length), "#project-num-view");
+        }
+      },
+      true
+    );
 
     sortByCreated.addEventListener("click", sortHandler, true);
     sortByUpdated.addEventListener("click", sortHandler, true);
@@ -155,7 +172,8 @@ const ProjectsList = (query) => {
       console.log(event);
       const sortBy = event.target.dataset.property;
       const whichClicked = event.srcElement.id;
-      let sortedModel = [], sortedView = [];
+      let sortedModel = [],
+        sortedView = [];
 
       if (whichClicked === "projects--sort-created") {
         sortByCreated.classList.add("active");
@@ -177,9 +195,8 @@ const ProjectsList = (query) => {
 
   return {
     searchData,
-    sortData,
-  }
-
+    sortData
+  };
 };
 
 export default ProjectsList;
