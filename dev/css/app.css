@@ -80,7 +80,7 @@ h5, h6 {
   text-transform: uppercase; }
 
 body {
-  font-family: 'Roboto'; }
+  font-family: "Roboto"; }
 
 a:link, a:visited {
   text-decoration: none;
@@ -94,7 +94,9 @@ hr {
   margin-top: 0.3em;
   margin-bottom: 0.2em; }
 
-.site--name, .site--name h1, .site--name h2 {
+.site--name,
+.site--name h1,
+.site--name h2 {
   padding: 0;
   margin: 0;
   line-height: 1;
@@ -130,6 +132,9 @@ hr {
 
 #medium:hover {
   color: #3cb371; }
+
+#codepen:hover {
+  color: #f0652f; }
 
 .hero {
   margin: 0 auto;
