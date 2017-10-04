@@ -14,6 +14,12 @@ import attachTooltip from "./modules/attachTooltip";
 import Fetch from "./modules/Fetch";
 import key from "../api.key";
 
+function isTouchDevice() {
+  return /(iphone|ipod|ipad|android|iemobile|blackberry)/.test(
+    window.navigator.userAgent.toLowerCase()
+  );
+}
+
 // don't actually use this right now because I'm using hash mode for routing.
 function setListeners() {
   const navLinks = document.getElementById("portfolio--nav");
@@ -70,5 +76,9 @@ function initalizeRoutes() {
 
 initalizeRoutes();
 setListeners(); // use javascript  to handle site navigation unless browser doesn't support history API
-attachTooltip(".contact-bar");
+
+if (!isTouchDevice()) {
+  attachTooltip(".contact-bar");
+}
+
 Router.check().listen();
