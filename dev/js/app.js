@@ -10,9 +10,11 @@ import Router from "./modules/Router";
 import CodingTimeWidget from "./modules/CodingTimeWidget";
 import ReadingList from "./modules/ReadingList";
 import ListProjects from "./modules/ListProjects";
+import attachTooltip from "./modules/attachTooltip";
 import Fetch from "./modules/Fetch";
 import key from "../api.key";
 
+// don't actually use this right now because I'm using hash mode for routing.
 function setListeners() {
   const navLinks = document.getElementById("portfolio--nav");
 
@@ -68,5 +70,5 @@ function initalizeRoutes() {
 
 initalizeRoutes();
 setListeners(); // use javascript  to handle site navigation unless browser doesn't support history API
-
+attachTooltip(".contact-bar");
 Router.check().listen();
