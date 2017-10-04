@@ -92,3 +92,39 @@
     }
   }
 }
+
+.box {
+  position: relative;
+}
+
+.tool-tip {
+  position: absolute;
+  transition: all 0.5s ease-in;
+  border: 3px solid gray;
+  opacity: 0;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  border-radius: 6px;
+  bottom: 70px;
+}
+
+.tool-tip:after {
+  position: absolute;
+  content: "";
+
+  width: 0;
+  height: 0;
+
+  top: 100%;
+  left: 38%;
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid grey;
+}
+
+.fade-in {
+  opacity: 1;
+}
