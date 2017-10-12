@@ -62,6 +62,16 @@
   }
 }
 
+.about {
+  margin-top: 10px;
+  background: black;
+  color: white;
+}
+
+.visible {
+  display: block;
+}
+
 #projects--search {
   max-width: 320px;
   margin: 0.2em auto;
@@ -100,11 +110,10 @@
 .tool-tip {
   position: absolute;
   transition: all 0.5s ease-in;
-  border: 3px solid gray;
   opacity: 0;
   padding: 5px 10px;
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
   text-align: center;
   border-radius: 6px;
   bottom: 70px;
@@ -122,7 +131,7 @@
 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid grey;
+  border-top: 10px solid black;
 }
 
 .fade-in {
