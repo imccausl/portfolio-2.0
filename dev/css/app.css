@@ -90,7 +90,7 @@ h1 {
   font-size: 3em; }
 
 h2 {
-  font-size: 2.5em; }
+  font-size: 2.4em; }
 
 h3 {
   font-size: 2em; }
@@ -106,7 +106,7 @@ p {
   line-height: 1.5; }
 
 .text--huge {
-  font-size: 2.5em;
+  font-size: 2.4em;
   word-break: break-all; }
 
 .text--big {
@@ -142,7 +142,12 @@ a:link, a:visited {
 
 a:hover {
   text-decoration: none;
-  color: orangered; }
+  color: firebrick; }
+
+.active-route {
+  color: orangered !important; }
+  .active-route:hover {
+    color: firebrick; }
 
 hr {
   margin-top: 0.3em;
