@@ -11,7 +11,14 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: orangered;
+    color: firebrick;
+  }
+}
+
+.active-route {
+  color: orangered !important;
+  &:hover {
+    color: firebrick;
   }
 }
 
