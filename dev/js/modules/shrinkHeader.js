@@ -7,7 +7,6 @@ function shrinkHeader() {
 
   function handleScroll(event) {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(headerText.children[2].children[0]);
     if (distanceY > shrinkOn) {
       header.classList.add('fixed');
       header.children[0].classList.remove('container');
