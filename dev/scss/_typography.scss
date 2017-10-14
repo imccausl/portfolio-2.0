@@ -1,4 +1,5 @@
 body {
+  font-family: "Noway Regular", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -9,8 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto";
-  font-weight: 900;
+  font-family: "Noway Medium";
 }
 
 h1 {
@@ -34,8 +34,12 @@ h6 {
   font-size: 1em;
 }
 
+p {
+  line-height: 1.5;
+}
+
 .text--huge {
-  font-size: 2.2em;
+  font-size: 2.5em;
   word-break: break-all;
 }
 
