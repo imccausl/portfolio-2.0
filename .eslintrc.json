@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "arrow-parens": ["as-needed", { "require-for-block-body": false }]
   }
 }
