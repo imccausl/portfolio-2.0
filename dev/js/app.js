@@ -12,6 +12,7 @@ import ReadingList from "./modules/ReadingList";
 import ListProjects from "./modules/ListProjects";
 import attachTooltip from "./modules/attachTooltip";
 import Fetch from "./modules/Fetch";
+import shrinkHeader from "./modules/shrinkHeader";
 import key from "../api.key";
 
 function isTouchDevice() {
@@ -81,4 +82,5 @@ if (!isTouchDevice()) {
   attachTooltip(".contact-bar");
 }
 
+shrinkHeader();
 Router.check().listen();
