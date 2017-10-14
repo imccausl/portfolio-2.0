@@ -3,17 +3,17 @@ function shrinkHeader() {
   const hero = document.querySelector(".hero");
   const headerImage = document.querySelector(".image--bio");
   const headerText = document.querySelector(".header--text");
-  const shrinkOn = 120;
+  const shrinkOn = 150;
 
   function handleScroll(event) {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop;
-    console.dir(hero);
-    console.log(headerText.children[0]);
+    console.log(headerText.children[2].children[0]);
     if (distanceY > shrinkOn) {
       header.classList.add("fixed");
       header.children[0].classList.remove("container");
       headerText.children[0].classList.remove("text--huge");
       headerText.children[0].classList.add("text--big");
+      headerText.children[2].classList.remove("text-center");
       hero.classList.remove("text-center");
       hero.classList.remove("center-content");
       hero.classList.remove("header--padding");
@@ -26,6 +26,7 @@ function shrinkHeader() {
         header.children[0].classList.add("container");
         headerText.children[0].classList.add("text--huge");
         headerText.children[0].classList.remove("text--big");
+        headerText.children[2].classList.add("text-center");
         hero.classList.add("text-center");
         hero.classList.add("center-content");
         hero.classList.add("header--padding");
