@@ -1,5 +1,5 @@
 .site-main {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
   top: 0;
 }
@@ -32,14 +32,13 @@
 
 .image--bio {
   display: inline-block;
-  transition: all 0.3s;
+  transition: all 0.4s;
   border-radius: 50%;
 
   padding-bottom: 0.5em;
 }
 
 .header--text {
-  transition: all 0.3s;
   padding: 10px;
 }
 
