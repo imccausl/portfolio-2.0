@@ -16,29 +16,31 @@
 <body>
 	<header class="site-main">
 		<div class="container">
-			<div class="hero text-center">
-				<img class="image--bio" width="40%" height="40%" src="img/bio.jpg" alt="biographical image">
-				<h1 class="text--huge">Ian McCausland</h1>
-				<h2 class="text--small">is a
-					<span class="text--salient">web developer</span> from
-					<span class="text--salient">Toronto</span>.</h2>
+			<div class="row hero text-center center-content header--padding">
+				<img class="image--bio image--bio-normal" src="img/bio.jpg" alt="biographical image">
+				<div class="header--text">
+					<h1 class="text--huge">Ian McCausland</h1>
+					<h2 class="text--small">is a
+						<span class="text--salient">web developer</span> from
+						<span class="text--salient">Toronto</span>.
+					</h2>
+					<nav class="nav--main text-center container">
+						<ul class="nav--list text--small" id="portfolio--nav">
+							<li>
+								<a href="/#/stats" data-route="/stats" class="text--bold">ABOUT</a> |</li>
+							<li>
+								<a href="/#/projects" data-route="/projects" class="text--bold">PROJECTS</a> |</li>
+							<li>
+								<a href="/#/resume" data-route="/resume" class="text--bold">RESUME</a> |</li>
+							<li>
+								<a href="http://www.modernmythologies.net" data-route="/blog" class="text--bold">BLOG</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</header>
-
-	<nav class="nav--main container">
-		<ul class="nav--list text-center text--small" id="portfolio--nav">
-			<li>
-				<a href="/#/stats" data-route="/stats" class="text--bold">About</a> /</li>
-			<li>
-				<a href="/#/projects" data-route="/projects" class="text--bold">Projects</a> /</li>
-			<li>
-				<a href="/#/resume" data-route="/resume" class="text--bold">Resume</a> /</li>
-			<li>
-				<a href="http://www.modernmythologies.net" data-route="/blog" class="text--bold">Blog</a>
-			</li>
-		</ul>
-	</nav>
 
 	<section id="main-view"></section>
 
@@ -89,6 +91,6 @@
 	</script>
 
 	<script src="js/site.js"></script>
-<script type="text/javascript" src="js/bundle.js?9f169281690d03a4a345"></script></body>
+<script type="text/javascript" src="js/bundle.js?2a201d68467a86579cd8"></script></body>
 
 </html>
