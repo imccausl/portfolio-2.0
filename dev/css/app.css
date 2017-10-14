@@ -32,8 +32,13 @@ body {
   font-size: 16px;
   line-height: 1; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto";
   font-weight: 900; }
 
 h1 {
@@ -48,11 +53,12 @@ h3 {
 h4 {
   font-size: 1.5em; }
 
-h5, h6 {
+h5,
+h6 {
   font-size: 1em; }
 
 .text--huge {
-  font-size: 2.5em;
+  font-size: 2.2em;
   word-break: break-all; }
 
 .text--big {
