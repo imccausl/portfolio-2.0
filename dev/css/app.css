@@ -108,6 +108,12 @@ hr {
   max-width: 500px;
   min-width: 300px; }
 
+.header--padding {
+  padding-top: 1em; }
+
+.float-left {
+  float: left; }
+
 .container {
   max-width: 600px; }
 
@@ -136,19 +142,49 @@ hr {
 #codepen:hover {
   color: #f0652f; }
 
+.section--separator {
+  border-top: 1px solid lightgrey; }
+
+.row {
+  margin: 0; }
+
+.center-content {
+  margin: 0 auto; }
+
+.site-main {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  top: 0; }
+
 .hero {
-  margin: 0 auto;
-  padding-top: 1em;
   max-width: 405px; }
   .hero h1,
   .hero h2 {
-    padding: 0;
-    margin: 0; }
+    padding: 0 5px;
+    margin: -5px; }
+
+.fixed {
+  position: fixed;
+  z-index: 10; }
+
+.image--bio-normal {
+  width: 40%;
+  height: 40%; }
+
+.image--bio-small {
+  padding: 10px;
+  width: 58px;
+  height: 55px; }
 
 .image--bio {
   display: inline-block;
+  transition: all 0.3s;
   border-radius: 50%;
   padding-bottom: 0.5em; }
+
+.header--text {
+  transition: all 0.3s;
+  padding: 10px; }
 
 .box {
   position: relative;
@@ -187,8 +223,8 @@ hr {
 
 .about {
   margin-top: 10px;
-  background: orangered;
-  color: white; }
+  background: white;
+  color: black; }
 
 .visible {
   display: block; }

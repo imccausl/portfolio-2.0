@@ -38,6 +38,14 @@ hr {
   min-width: 300px;
 }
 
+.header--padding {
+  padding-top: 1em;
+}
+
+.float-left {
+  float: left;
+}
+
 .container {
   max-width: 600px;
 }
@@ -67,4 +75,15 @@ hr {
 }
 #codepen:hover {
   color: #f0652f;
+}
+
+.section--separator {
+  border-top: 1px solid lightgrey;
+}
+.row {
+  margin: 0;
+}
+
+.center-content {
+  margin: 0 auto;
 }
