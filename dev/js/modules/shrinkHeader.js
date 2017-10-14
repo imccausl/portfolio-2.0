@@ -2,29 +2,55 @@ function shrinkHeader() {
   const header = document.querySelector('.site-main');
   const hero = document.querySelector('.hero');
   const headerImage = document.querySelector('.image--bio');
-  const headerText = document.querySelector('.header--text');
-  const shrinkOn = 150;
+  const headerContent = document.querySelector('.header--content');
+  const shrinkOn = 450;
 
   function handleScroll(event) {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop;
     if (distanceY > shrinkOn) {
       header.classList.add('fixed');
       header.children[0].classList.remove('container');
-      headerText.children[0].classList.remove('text--huge');
-      headerText.children[0].classList.add('text--big');
-      headerText.children[2].classList.remove('text-center');
+
+      headerContent.children[0].classList.remove('text--huge');
+      headerContent.children[0].classList.add('text--big');
+      headerContent.children[2].classList.remove('text-center');
+      headerContent.children[2].classList.remove('nav-main-padding--expanded');
+      headerContent.children[2].classList.add('nav-main--reposition');
+
+      headerContent.children[2].children[0].children[0].classList.remove('display-block');
+      headerContent.children[2].children[0].children[1].classList.remove('display-block');
+      headerContent.children[2].children[0].children[2].classList.remove('display-block');
+      headerContent.children[2].children[0].children[3].classList.remove('display-block');
+      headerContent.children[2].children[0].children[0].classList.add('display-inline-block');
+      headerContent.children[2].children[0].children[1].classList.add('display-inline-block');
+      headerContent.children[2].children[0].children[2].classList.add('display-inline-block');
+      headerContent.children[2].children[0].children[3].classList.add('display-inline-block');
+
       hero.classList.remove('text-center');
       hero.classList.remove('center-content');
       hero.classList.remove('header--padding');
       hero.children[0].classList.add('float-left');
+
       headerImage.classList.remove('image--bio-normal');
       headerImage.classList.add('image--bio-small');
     } else if (distanceY < shrinkOn && header.classList.contains('fixed')) {
       header.classList.remove('fixed');
       header.children[0].classList.add('container');
-      headerText.children[0].classList.add('text--huge');
-      headerText.children[0].classList.remove('text--big');
-      headerText.children[2].classList.add('text-center');
+      headerContent.children[0].classList.add('text--huge');
+      headerContent.children[0].classList.remove('text--big');
+      headerContent.children[2].classList.add('text-center');
+      headerContent.children[2].classList.remove('nav-main--reposition');
+      headerContent.children[2].classList.add('nav-main-padding--expanded');
+
+      headerContent.children[2].children[0].children[0].classList.add('display-block');
+      headerContent.children[2].children[0].children[1].classList.add('display-block');
+      headerContent.children[2].children[0].children[2].classList.add('display-block');
+      headerContent.children[2].children[0].children[3].classList.add('display-block');
+      headerContent.children[2].children[0].children[0].classList.remove('display-inline-block');
+      headerContent.children[2].children[0].children[1].classList.remove('display-inline-block');
+      headerContent.children[2].children[0].children[2].classList.remove('display-inline-block');
+      headerContent.children[2].children[0].children[3].classList.remove('display-inline-block');
+
       hero.classList.add('text-center');
       hero.classList.add('center-content');
       hero.classList.add('header--padding');
