@@ -4,11 +4,15 @@ function shrinkHeader() {
   const headerImage = document.querySelector('.image--bio');
   const headerContent = document.querySelector('.header--content');
   const navButton = document.querySelector('.nav-button');
+  const mainView = document.querySelector('#main-view');
   const shrinkOn = 450;
 
   function handleScroll(event) {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop;
-    if (distanceY > shrinkOn) {
+
+    console.log(distanceY);
+
+    if (distanceY > shrinkOn && !mainView.classList.contains('push-down-view')) {
       header.classList.add('fixed');
       header.children[0].classList.remove('container');
 
@@ -38,7 +42,12 @@ function shrinkHeader() {
 
       headerImage.classList.remove('image--bio-normal');
       headerImage.classList.add('image--bio-small');
-    } else if (distanceY < shrinkOn && header.classList.contains('fixed')) {
+
+      mainView.classList.add('push-down-view');
+
+      window.scrollTo(0, 460);
+    } else if (distanceY < shrinkOn && mainView.classList.contains('push-down-view')) {
+      mainView.classList.remove('push-down-view');
       header.classList.remove('fixed');
       header.children[0].classList.add('container');
       headerContent.children[0].classList.add('text--huge');
@@ -65,6 +74,7 @@ function shrinkHeader() {
       hero.children[0].classList.remove('float-left');
       headerImage.classList.add('image--bio-normal');
       headerImage.classList.remove('image--bio-small');
+      window.scrollTo(0, 0);
     }
   }
 
