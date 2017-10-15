@@ -7,8 +7,8 @@
 .hero {
   h1,
   h2 {
-    padding: 0 5px;
-    margin: -5px;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -38,7 +38,16 @@
 
 .header--content {
   position: relative;
-  padding: 10px;
+  padding: 15px;
+
+  h1,
+  h2 {
+    display: inline-block;
+  }
+}
+
+.hidden-xxs {
+  display: inline-block;
 }
 
 .box {
@@ -160,4 +169,20 @@
 
 .fade-in {
   opacity: 1;
+}
+
+/* breakpoints */
+
+@media screen and (max-width: 330px) {
+  .header--content {
+    padding: 14px;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .hidden-xxs {
+    display: block !important;
+    margin: -3px 0 !important;
+    padding-left: 46px !important;
+  }
 }

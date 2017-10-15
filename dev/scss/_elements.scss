@@ -73,6 +73,12 @@ hr {
   padding-bottom: 4.5em;
 }
 
+.button--no-style {
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
 /* Hover color change for social links */
 #twitter:hover {
   color: rgb(0, 172, 237);
@@ -105,4 +111,12 @@ hr {
 
 .center-content {
   margin: 0 auto;
+}
+
+/* breakpoints */
+
+@media screen and (max-width: 850px) {
+  .display-inline-block {
+    display: block;
+  }
 }

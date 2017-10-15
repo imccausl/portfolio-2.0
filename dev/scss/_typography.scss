@@ -13,6 +13,11 @@ h6 {
   font-family: "Noway Medium";
 }
 
+.header-font,
+.widget-font {
+  font-family: "HK Nova Medium";
+}
+
 h1 {
   font-size: 3em;
 }
@@ -39,16 +44,16 @@ p {
 }
 
 .text--huge {
-  font-size: 2.4em;
+  font-size: 2em;
   word-break: break-all;
 }
 
 .text--big {
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
 .text--small {
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 
 .text--bold {
@@ -73,4 +78,12 @@ p {
 
 .text--allcaps {
   text-transform: uppercase;
+}
+
+/* breakpoints */
+
+@media screen and (max-width: 330px) {
+  .text--big {
+    font-size: 1.6em;
+  }
 }

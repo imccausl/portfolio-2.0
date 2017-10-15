@@ -86,6 +86,10 @@ h5,
 h6 {
   font-family: "Noway Medium"; }
 
+.header-font,
+.widget-font {
+  font-family: "HK Nova Medium"; }
+
 h1 {
   font-size: 3em; }
 
@@ -106,14 +110,14 @@ p {
   line-height: 1.5; }
 
 .text--huge {
-  font-size: 2.4em;
+  font-size: 2em;
   word-break: break-all; }
 
 .text--big {
-  font-size: 2em; }
+  font-size: 1.6em; }
 
 .text--small {
-  font-size: 0.9em; }
+  font-size: 0.7em; }
 
 .text--bold {
   font-weight: 900; }
@@ -132,6 +136,11 @@ p {
 
 .text--allcaps {
   text-transform: uppercase; }
+
+/* breakpoints */
+@media screen and (max-width: 330px) {
+  .text--big {
+    font-size: 1.6em; } }
 
 body {
   font-family: "Roboto"; }
@@ -188,6 +197,11 @@ hr {
 .route--footer {
   padding-bottom: 4.5em; }
 
+.button--no-style {
+  background: transparent;
+  border: 0;
+  outline: none; }
+
 /* Hover color change for social links */
 #twitter:hover {
   color: #00aced; }
@@ -219,6 +233,11 @@ hr {
 .center-content {
   margin: 0 auto; }
 
+/* breakpoints */
+@media screen and (max-width: 850px) {
+  .display-inline-block {
+    display: block; } }
+
 .site-main {
   background-color: rgba(255, 255, 255, 0.9);
   width: 100%;
@@ -226,8 +245,8 @@ hr {
 
 .hero h1,
 .hero h2 {
-  padding: 0 5px;
-  margin: -5px; }
+  padding: 0;
+  margin: 0; }
 
 .fixed {
   position: fixed;
@@ -251,7 +270,13 @@ hr {
 
 .header--content {
   position: relative;
-  padding: 10px; }
+  padding: 15px; }
+  .header--content h1,
+  .header--content h2 {
+    display: inline-block; }
+
+.hidden-xxs {
+  display: inline-block; }
 
 .box {
   position: relative;
@@ -345,6 +370,17 @@ hr {
 .fade-in {
   opacity: 1; }
 
+/* breakpoints */
+@media screen and (max-width: 330px) {
+  .header--content {
+    padding: 14px; } }
+
+@media screen and (max-width: 515px) {
+  .hidden-xxs {
+    display: block !important;
+    margin: -3px 0 !important;
+    padding-left: 46px !important; } }
+
 .nav--main {
   width: 100%;
   bottom: 0;
@@ -352,14 +388,76 @@ hr {
   font-weight: 500;
   transition: all 0.5s; }
 
+.nav-button {
+  display: none;
+  position: absolute;
+  font-size: 1.5em;
+  padding: 0;
+  right: 15px;
+  top: 18px;
+  height: 50px;
+  width: 25px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; }
+  .nav-button span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: midnightblue;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out; }
+  .nav-button span:nth-child(1) {
+    top: 0px; }
+  .nav-button span:nth-child(2) {
+    top: 8px; }
+  .nav-button span:nth-child(3) {
+    top: 16px; }
+
+.open span {
+  background: orangered; }
+
+.open span:nth-child(1) {
+  top: 8px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px; }
+
+.open span:nth-child(3) {
+  top: 8px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg); }
+
 .nav-main-padding--expanded {
   padding: 0.6em 0; }
 
 .nav-main--reposition {
   position: absolute;
+  margin-right: 20px;
   padding: 0;
   font-size: 1.5em;
-  right: -250px;
+  right: -120px;
   top: 14px; }
 
 #portfolio--nav {
@@ -389,3 +487,17 @@ hr {
   background-color: rgba(255, 255, 255, 0.85);
   bottom: 0;
   width: 100%; }
+
+/* breakpoints */
+/* remove nav links and replace them with a reveal button at 663px wide */
+@media screen and (max-width: 850px) {
+  .nav-main--reposition {
+    position: relative;
+    padding: inherit;
+    margin: 60px auto;
+    font-size: 4em;
+    height: 100vh;
+    right: 0;
+    display: none; }
+  .nav-button--show {
+    display: block; } }
