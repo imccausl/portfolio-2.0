@@ -239,7 +239,7 @@ hr {
   margin: 0 auto; }
 
 /* breakpoints */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 860px) {
   .display-inline-block {
     display: block; } }
 
@@ -501,7 +501,7 @@ section#projects-view {
 
 /* breakpoints */
 /* remove nav links and replace them with a reveal button at 663px wide */
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 860px) {
   .nav-main--reposition {
     position: relative;
     padding: inherit;
