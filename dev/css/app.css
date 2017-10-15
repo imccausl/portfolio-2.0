@@ -248,10 +248,22 @@ hr {
   width: 100%;
   top: 0; }
 
-.hero h1,
-.hero h2 {
-  padding: 0;
-  margin: 0; }
+.hero {
+  transition: height 0.3s ease-out;
+  overflow: hidden; }
+  .hero h1,
+  .hero h2 {
+    padding: 0;
+    margin: 0; }
+
+.hero--expanded {
+  height: 475px; }
+
+.hero--bar {
+  height: 55px; }
+
+.hero--full-screen {
+  height: 100vh; }
 
 .fixed {
   position: fixed;
@@ -269,7 +281,6 @@ hr {
 
 .image--bio {
   display: inline-block;
-  transition: all 0.4s;
   border-radius: 50%;
   padding-bottom: 0.5em; }
 
@@ -284,7 +295,7 @@ hr {
   display: inline-block; }
 
 .push-down-view {
-  padding-top: 32em; }
+  padding-top: 35em; }
 
 .box {
   position: relative;
@@ -507,8 +518,9 @@ section#projects-view {
     padding: inherit;
     margin: 60px auto;
     font-size: 3.7em;
-    height: 100vh;
     right: 0;
-    display: none; }
+    opacity: 0; }
   .nav-button--show {
-    display: block; } }
+    display: block; }
+  .nav-menu--show {
+    opacity: 1; } }

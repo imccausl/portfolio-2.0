@@ -141,12 +141,15 @@
     padding: inherit;
     margin: 60px auto;
     font-size: 3.7em;
-    height: 100vh;
     right: 0;
-    display: none;
+    opacity: 0;
   }
 
   .nav-button--show {
     display: block;
+  }
+
+  .nav-menu--show {
+    opacity: 1;
   }
 }

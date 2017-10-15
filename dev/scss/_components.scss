@@ -5,11 +5,25 @@
 }
 
 .hero {
+  transition: height 0.3s ease-out;
+  overflow: hidden;
   h1,
   h2 {
     padding: 0;
     margin: 0;
   }
+}
+
+.hero--expanded {
+  height: 475px;
+}
+
+.hero--bar {
+  height: 55px;
+}
+
+.hero--full-screen {
+  height: 100vh;
 }
 
 .fixed {
@@ -31,7 +45,6 @@
 
 .image--bio {
   display: inline-block;
-  transition: all 0.4s;
   border-radius: 50%;
   padding-bottom: 0.5em;
 }
@@ -51,7 +64,7 @@
 }
 
 .push-down-view {
-  padding-top: 32em;
+  padding-top: 35em;
 }
 
 .box {

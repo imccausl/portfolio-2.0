@@ -13,6 +13,9 @@ function shrinkHeader() {
     console.log(distanceY);
 
     if (distanceY > shrinkOn && !mainView.classList.contains('push-down-view')) {
+      hero.classList.remove('hero--expanded');
+      hero.classList.add('hero--bar');
+
       header.classList.add('fixed');
       header.children[0].classList.remove('container');
 
@@ -48,6 +51,10 @@ function shrinkHeader() {
       window.scrollTo(0, 460);
     } else if (distanceY < shrinkOn && mainView.classList.contains('push-down-view')) {
       mainView.classList.remove('push-down-view');
+
+      hero.classList.add('hero--expanded');
+      hero.classList.remove('hero--bar');
+
       header.classList.remove('fixed');
       header.children[0].classList.add('container');
       headerContent.children[0].classList.add('text--huge');
@@ -82,7 +89,8 @@ function shrinkHeader() {
     event.preventDefault();
 
     navButton.classList.toggle('open');
-    headerContent.children[3].classList.toggle('nav-button--show');
+    headerContent.children[3].classList.toggle('nav-menu--show');
+    hero.classList.toggle('hero--full-screen');
   }
 
   window.addEventListener('scroll', handleScroll, false);
