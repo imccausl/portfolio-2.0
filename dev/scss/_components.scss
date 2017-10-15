@@ -19,8 +19,8 @@
 }
 
 .image--bio-normal {
-  width: 175px;
-  height: 175px;
+  width: 195px;
+  height: 195px;
 }
 
 .image--bio-small {
@@ -48,6 +48,10 @@
 
 .hidden-xxs {
   display: inline-block;
+}
+
+.push-down-view {
+  padding-top: 32em;
 }
 
 .box {
@@ -127,12 +131,18 @@
 
 #main-view {
   section {
+    padding-top: 5px;
+
     div {
       .well {
         margin-bottom: 10px;
       }
     }
   }
+}
+
+section#projects-view {
+  padding-top: 15px;
 }
 
 .box {

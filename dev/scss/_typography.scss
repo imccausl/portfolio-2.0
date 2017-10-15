@@ -1,5 +1,5 @@
 body {
-  font-family: "Noway Regular", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -10,7 +10,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Noway Medium";
+  font-family: "HK Nova Medium";
 }
 
 .header-font,
@@ -41,6 +41,8 @@ h6 {
 
 p {
   line-height: 1.5;
+  font-size: 1.2em;
+  margin: 20px 0;
 }
 
 .text--huge {

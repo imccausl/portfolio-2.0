@@ -74,7 +74,7 @@
   font-style: normal; }
 
 body {
-  font-family: "Noway Regular", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1; }
 
@@ -84,7 +84,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Noway Medium"; }
+  font-family: "HK Nova Medium"; }
 
 .header-font,
 .widget-font {
@@ -107,7 +107,9 @@ h6 {
   font-size: 1em; }
 
 p {
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-size: 1.2em;
+  margin: 20px 0; }
 
 .text--huge {
   font-size: 2em;
@@ -152,6 +154,9 @@ a:link, a:visited {
 a:hover {
   text-decoration: none;
   color: firebrick; }
+
+section {
+  padding-bottom: 10px; }
 
 .active-route {
   color: orangered !important; }
@@ -254,8 +259,8 @@ hr {
   z-index: 10; }
 
 .image--bio-normal {
-  width: 175px;
-  height: 175px; }
+  width: 195px;
+  height: 195px; }
 
 .image--bio-small {
   padding: 10px;
@@ -277,6 +282,9 @@ hr {
 
 .hidden-xxs {
   display: inline-block; }
+
+.push-down-view {
+  padding-top: 32em; }
 
 .box {
   position: relative;
@@ -337,8 +345,13 @@ hr {
   width: 100%;
   height: 100vh; }
 
-#main-view section div .well {
-  margin-bottom: 10px; }
+#main-view section {
+  padding-top: 5px; }
+  #main-view section div .well {
+    margin-bottom: 10px; }
+
+section#projects-view {
+  padding-top: 15px; }
 
 .box {
   position: relative; }
@@ -452,7 +465,7 @@ hr {
 
 .nav-main--reposition {
   position: absolute;
-  margin-right: 20px;
+  margin-right: 25px;
   padding: 0;
   font-size: 1.5em;
   right: -120px;
@@ -493,7 +506,7 @@ hr {
     position: relative;
     padding: inherit;
     margin: 60px auto;
-    font-size: 4em;
+    font-size: 3.7em;
     height: 100vh;
     right: 0;
     display: none; }
