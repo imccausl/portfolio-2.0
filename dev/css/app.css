@@ -337,10 +337,8 @@ hr {
   width: 100%;
   height: 100vh; }
 
-#main-view section {
-  margin-top: 0.8em; }
-  #main-view section div .well {
-    margin-bottom: 10px; }
+#main-view section div .well {
+  margin-bottom: 10px; }
 
 .box {
   position: relative; }
