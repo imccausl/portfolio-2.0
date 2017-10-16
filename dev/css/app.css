@@ -367,6 +367,7 @@ section#projects-view {
 .box {
   position: relative; }
 
+/* CSS Required for attachTooltip module */
 .tool-tip {
   position: absolute;
   transition: all 0.5s ease-in;
