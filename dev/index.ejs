@@ -10,9 +10,12 @@
 
 	<title>Ian McCausland | Web Developer</title>
 
-	<!-- build:css css/style.css -->
+	<!-- build:css css/vendor.css -->
 	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	<link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<!-- endbuild -->
+
+	<!-- build:css css/style.css -->
 	<link href="css/app.css" rel="stylesheet">
 	<!--endbuild -->
 </head>
@@ -23,7 +26,7 @@
 			<div class="row hero text-center center-content header--padding hero--expanded">
 				<img class="image--bio image--bio-normal" src="img/bio.jpg" alt="biographical image">
 				<div class="header--content">
-					<h1 class="text--huge header-font">Ian McCausland</h1>
+					<h1 class="text--huge header-font shift-up-xxs">Ian McCausland</h1>
 					<h2 class="text--small header-font">is a
 						<span class="text--salient">web developer</span> from
 						<span class="text--salient">Toronto</span>.
@@ -56,40 +59,49 @@
 
 	<section class="section--separator" id="main-view"></section>
 
-	<footer class="contact-bar">
-		<div class="container">
-			<div class="box">
-				<ul class="nav--list contact-nav text-center text--big">
-					<li>
-						<a href="https://www.github.com/imccausl" id="github" data-item="Github">
-							<i class="fa fa-github"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://codepen.io/imccausl/" id="codepen" data-item="Codepen">
-							<i class="fa fa-codepen"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/ian-mccausland-97499040/" id="linkedin" data-item="Linked-In">
-							<i class="fa fa-linkedin"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://twitter.com/imccausl" id="twitter" data-item="Twitter">
-							<i class="fa fa-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="mailto:imccausl@gmail.com" id="envelope" data-item="Email">
-							<i class="fa fa-envelope"></i>
-						</a>
-					</li>
-				</ul>
+	<footer>
+		<nav class="contact-bar">
+			<div class="container">
+				<div class="box">
+					<ul class="nav--list contact-nav text-center text--big">
+						<li>
+							<a href="https://www.github.com/imccausl" id="github" data-item="Github">
+								<i class="fa fa-github"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://codepen.io/imccausl/" id="codepen" data-item="Codepen">
+								<i class="fa fa-codepen"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/ian-mccausland-97499040/" id="linkedin" data-item="Linked-In">
+								<i class="fa fa-linkedin"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/imccausl" id="twitter" data-item="Twitter">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:imccausl@gmail.com" id="envelope" data-item="Email">
+								<i class="fa fa-envelope"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
-		</div>
-	</footer>
+		</nav>
 
+		<section class="section-separator footer--position footer--text-size">
+			<div class="text-center">
+				<p class="footer--style">Copyright (C) 2017 Ian McCausland</p>
+				<p class="footer--style">This site was hand-coded with mostly vanilla JavaScript and a tiny bit of jQuery in VS Code.</p>
+				<p class="footer--style">It was built with webpack and gulp and hosted on GitHub pages.</p>
+			</div>
+		</section>
+	</footer>
 	<script>
 		(function (i, s, o, g, r, a, m) {
 			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
