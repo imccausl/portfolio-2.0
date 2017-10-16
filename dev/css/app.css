@@ -139,21 +139,27 @@ p {
 .text--allcaps {
   text-transform: uppercase; }
 
+.footer--text-size {
+  font-size: 10px; }
+
 /* breakpoints */
 @media screen and (max-width: 330px) {
   .text--big {
-    font-size: 1.6em; } }
+    font-size: 1.6em; }
+  p {
+    font-size: 1em; } }
 
 body {
   font-family: "Roboto"; }
 
-a:link, a:visited {
-  text-decoration: none;
-  color: midnightblue; }
-
-a:hover {
-  text-decoration: none;
-  color: firebrick; }
+a {
+  transition: color 0.5s ease-out; }
+  a:link, a:visited {
+    text-decoration: none;
+    color: midnightblue; }
+  a:hover {
+    text-decoration: none;
+    color: firebrick; }
 
 section {
   padding-bottom: 10px; }
@@ -207,6 +213,9 @@ hr {
   border: 0;
   outline: none; }
 
+.disable-transition {
+  transition: none !important; }
+
 /* Hover color change for social links */
 #twitter:hover {
   color: #00aced; }
@@ -232,6 +241,16 @@ hr {
 .section--separator {
   border-top: 1px solid lightgrey; }
 
+.footer--position {
+  position: relative;
+  bottom: 35px;
+  z-index: 1; }
+
+.footer--style {
+  padding: 0;
+  margin: 0;
+  line-height: 1; }
+
 .row {
   margin: 0; }
 
@@ -239,12 +258,12 @@ hr {
   margin: 0 auto; }
 
 /* breakpoints */
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 875px) {
   .display-inline-block {
     display: block; } }
 
 .site-main {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(217, 237, 247, 0.95);
   width: 100%;
   top: 0; }
 
@@ -267,7 +286,7 @@ hr {
 
 .fixed {
   position: fixed;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #ddd;
   z-index: 10; }
 
 .image--bio-normal {
@@ -291,11 +310,11 @@ hr {
   .header--content h2 {
     display: inline-block; }
 
-.hidden-xxs {
+.wrap-xxs {
   display: inline-block; }
 
 .push-down-view {
-  padding-top: 35em; }
+  padding-top: 33em; }
 
 .box {
   position: relative;
@@ -394,14 +413,12 @@ section#projects-view {
   opacity: 1; }
 
 /* breakpoints */
-@media screen and (max-width: 330px) {
-  .header--content {
-    padding: 14px; } }
-
 @media screen and (max-width: 515px) {
-  .hidden-xxs {
+  .shift-up-xxs {
+    margin: -5px 0 !important; }
+  .wrap-xxs {
     display: block !important;
-    margin: -3px 0 !important;
+    margin: 0 -1px !important;
     padding-left: 46px !important; } }
 
 .nav--main {
@@ -481,7 +498,7 @@ section#projects-view {
   padding: 0;
   font-size: 1.5em;
   right: -120px;
-  top: 14px; }
+  top: 12px; }
 
 #portfolio--nav {
   font-family: "HK Nova Medium";
@@ -509,11 +526,12 @@ section#projects-view {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.85);
   bottom: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 5; }
 
 /* breakpoints */
 /* remove nav links and replace them with a reveal button at 663px wide */
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 875px) {
   .nav-main--reposition {
     position: relative;
     padding: inherit;
@@ -525,3 +543,79 @@ section#projects-view {
     display: block; }
   .nav-menu--show {
     opacity: 1; } }
+
+@media screen and (max-width: 330px) {
+  .nav-main--reposition {
+    font-size: 3.5em; } }
+
+.loader {
+  color: #000;
+  display: none;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 999999; }
+  .loader:after, .loader:before {
+    box-sizing: border-box;
+    display: none; }
+  .loader.is-active {
+    background-color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }
+    .loader.is-active:after, .loader.is-active:before {
+      display: block; }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(359deg); } }
+
+@keyframes blink {
+  from {
+    opacity: .5; }
+  to {
+    opacity: 1; } }
+
+.loader[data-text]:before {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  color: currentColor;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  width: 100%;
+  font-size: 14px; }
+
+.loader[data-text='']:before {
+  content: 'Loading'; }
+
+.loader[data-text]:not([data-text='']):before {
+  content: attr(data-text); }
+
+.loader[data-text][data-blink]:before {
+  animation: blink 1s linear infinite alternate; }
+
+.loader-default[data-text]:before {
+  top: calc(50% - 63px); }
+
+.loader-default:after {
+  content: '';
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border: solid 8px #000;
+  border-left-color: transparent;
+  border-radius: 50%;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  animation: rotation 1s linear infinite; }
+
+.loader-default[data-half]:after {
+  border-right-color: transparent; }
+
+.loader-default[data-inverse]:after {
+  animation-direction: reverse; }
