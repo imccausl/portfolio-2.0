@@ -1,14 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: __dirname + '/dev/js',
+  context: `${__dirname}/dev`,
   devtool: 'eval-cheap-module-source-map',
   entry: {
-    app: './app.js',
+    app: './js/app.js',
   },
   output: {
-    path: __dirname + '/dev/js',
-    filename: 'bundle.js',
+    path: `${__dirname}/dev/js`,
+    filename: './js/bundle.js',
   },
   module: {
     rules: [
@@ -18,14 +18,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      }
+      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin(
-    {
-      template: __dirname + '/dev/app.html',
-      filename: __dirname + '/dev/index.html',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: `${__dirname}/dev/index.ejs`,
+      filename: 'index.html',
       hash: true,
-    }
-  )],
+    }),
+  ],
 };
