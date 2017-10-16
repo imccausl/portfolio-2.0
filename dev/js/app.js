@@ -55,17 +55,20 @@ function initalizeRoutes() {
         highlightActiveRoute(`/${Router.getFragment()}`);
         CodingTimeWidget($);
         ReadingList(Fetch, key);
+        window.scrollTo(0, 460);
       });
     })
       .add(/projects/, () => {
         $('#main-view').load('routes/projects.html', () => {
           highlightActiveRoute(`/${Router.getFragment()}`);
           ListProjects();
+          window.scrollTo(0, 460);
         });
       })
       .add(/resume/, () => {
         $('#main-view').load('routes/resume.html', () => {
           highlightActiveRoute(`/${Router.getFragment()}`);
+          window.scrollTo(0, 460);
         });
       })
       .add(/\*/, () => {
