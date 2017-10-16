@@ -3,6 +3,7 @@ body {
 }
 
 a {
+  transition: color 0.5s ease-out;
   &:link,
   &:visited {
     text-decoration: none;
@@ -83,6 +84,10 @@ hr {
   outline: none;
 }
 
+.disable-transition {
+  transition: none !important;
+}
+
 /* Hover color change for social links */
 #twitter:hover {
   color: rgb(0, 172, 237);
@@ -110,6 +115,18 @@ hr {
   border-top: 1px solid lightgrey;
 }
 
+.footer--position {
+  position: relative;
+  bottom: 35px;
+  z-index: 1;
+}
+
+.footer--style {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
 .row {
   margin: 0;
 }
@@ -120,7 +137,7 @@ hr {
 
 /* breakpoints */
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 875px) {
   .display-inline-block {
     display: block;
   }

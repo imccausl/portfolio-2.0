@@ -82,10 +82,18 @@ p {
   text-transform: uppercase;
 }
 
+.footer--text-size {
+  font-size: 10px;
+}
+
 /* breakpoints */
 
 @media screen and (max-width: 330px) {
   .text--big {
     font-size: 1.6em;
+  }
+
+  p {
+    font-size: 1em;
   }
 }
