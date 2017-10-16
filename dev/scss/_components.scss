@@ -1,5 +1,5 @@
 .site-main {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(217, 237, 247, 0.95);
   width: 100%;
   top: 0;
 }
@@ -28,7 +28,7 @@
 
 .fixed {
   position: fixed;
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #ddd;
   z-index: 10;
 }
 
@@ -59,12 +59,12 @@
   }
 }
 
-.hidden-xxs {
+.wrap-xxs {
   display: inline-block;
 }
 
 .push-down-view {
-  padding-top: 35em;
+  padding-top: 33em;
 }
 
 .box {
@@ -197,16 +197,14 @@ section#projects-view {
 
 /* breakpoints */
 
-@media screen and (max-width: 330px) {
-  .header--content {
-    padding: 14px;
-  }
-}
-
 @media screen and (max-width: 515px) {
-  .hidden-xxs {
+  .shift-up-xxs {
+    margin: -5px 0 !important;
+  }
+
+  .wrap-xxs {
     display: block !important;
-    margin: -3px 0 !important;
+    margin: 0 -1px !important;
     padding-left: 46px !important;
   }
 }
