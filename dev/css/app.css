@@ -300,8 +300,7 @@ hr {
 
 .image--bio {
   display: inline-block;
-  border-radius: 50%;
-  padding-bottom: 0.5em; }
+  border-radius: 50%; }
 
 .header--content {
   position: relative;
