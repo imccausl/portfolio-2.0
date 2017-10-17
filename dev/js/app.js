@@ -14,6 +14,7 @@ import attachTooltip from './modules/attachTooltip';
 import highlightActiveRoute from './modules/highlightActiveRoute';
 import Fetch from './modules/Fetch';
 import shrinkHeader from './modules/shrinkHeader';
+import collapseNav from './util/collapseNav';
 import key from '../api.key';
 
 // helper function for determining whether we are on a touch device or not.
@@ -35,6 +36,8 @@ function setListeners() {
         event.preventDefault();
         Router.navigate(route);
       }
+
+      collapseNav();
     },
     true,
   );
