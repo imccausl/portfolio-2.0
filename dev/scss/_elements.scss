@@ -13,6 +13,22 @@ a {
   &:hover {
     text-decoration: none;
     color: firebrick;
+
+    animation: hover-throb 3s ease-in-out 2s infinite;
+  }
+}
+
+@keyframes hover-throb {
+  0% {
+    color: firebrick;
+  }
+
+  50% {
+    color: midnightblue;
+  }
+
+  100% {
+    color: firebrick;
   }
 }
 
