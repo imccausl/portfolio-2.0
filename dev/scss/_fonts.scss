@@ -39,37 +39,6 @@
     url("../fonts/roboto-v16-latin-900.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 
-/* didact-gothic-regular - latin */
-@font-face {
-  font-family: "Didact Gothic";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/didact-gothic-v11-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local("Didact Gothic Regular"), local("DidactGothic-Regular"),
-    url("../fonts/didact-gothic-v11-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/didact-gothic-v11-latin-regular.woff2") format("woff2"),
-    url("../fonts/didact-gothic-v11-latin-regular.woff") format("woff"),
-    url("../fonts/didact-gothic-v11-latin-regular.ttf") format("truetype"),
-    url("../fonts/didact-gothic-v11-latin-regular.svg#DidactGothic")
-      format("svg"); /* Legacy iOS */
-}
-
-/* contrail-one-regular - latin */
-@font-face {
-  font-family: "Contrail One";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/contrail-one-v7-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local("Contrail One"), local("ContrailOne-Regular"),
-    url("../fonts/contrail-one-v7-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/contrail-one-v7-latin-regular.woff2") format("woff2"),
-    url("../fonts/contrail-one-v7-latin-regular.woff") format("woff"),
-    url("../fonts/contrail-one-v7-latin-regular.ttf") format("truetype"),
-    url("../fonts/contrail-one-v7-latin-regular.svg#ContrailOne") format("svg"); /* Legacy iOS */
-}
-
 /* HK Nova Medium */
 @font-face {
   font-family: "HK Nova Medium";
@@ -81,32 +50,4 @@
     url("../fonts/HKNova-Medium.woff2") format("woff2"),
     url("../fonts/HKNova-Medium.woff") format("woff"),
     url("../fonts/HKNova-Medium.ttf") format("truetype");
-}
-
-/* Noway Medium */
-@font-face {
-  font-family: "Noway Medium";
-  src: url("../fonts/noway-medium-webfont.eot");
-  src: url("../fonts/noway-medium-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/noway-medium-webfont.woff2") format("woff2"),
-    url("../fonts/noway-medium-webfont.woff") format("woff"),
-    url("../fonts/noway-medium-webfont.ttf") format("truetype"),
-    url("../fonts/noway-medium-webfont.svg#nowaymedium") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Noway Regular */
-@font-face {
-  font-family: "Noway Regular";
-  src: url("../fonts/noway-regular-webfont.eot");
-  src: url("../fonts/noway-regular-webfont.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/noway-regular-webfont.woff2") format("woff2"),
-    url("../fonts/noway-regular-webfont.woff") format("woff"),
-    url("../fonts/noway-regular-webfont.ttf") format("truetype"),
-    url("../fonts/noway-regular-webfont.svg#nowayregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
 }
