@@ -288,7 +288,8 @@ hr {
   height: 475px; }
 
 .hero--bar {
-  height: 55px; }
+  height: 55px;
+  box-shadow: 0 0 7px 0px #080808; }
 
 .hero--full-screen {
   height: 100vh; }
