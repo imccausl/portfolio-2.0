@@ -100,7 +100,7 @@ gulp.task('watch', () => {
   gulp.watch('dev/*.html', browserSync.reload);
   gulp.watch(['dev/js/**/*.js', 'dev/*.ejs', '!dev/js/bundle.js'], ['webpack']);
   gulp.watch('dev/js/bundle.js', browserSync.reload);
-  gulp.watch('dev/**/*', ['useref']);
+  gulp.watch('dev/**/*', ['useref'], browserSync.reload);
 });
 
 gulp.task('build', callback => {
