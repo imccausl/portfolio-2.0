@@ -7,11 +7,11 @@
 }
 
 .nav-button {
-  display: none;
+  display: block;
   position: absolute;
   font-size: 1.5em;
   padding: 0;
-  right: 15px;
+  right: -35px;
   top: 18px;
 
   height: 50px;
@@ -147,7 +147,7 @@
   }
 
   .nav-button--show {
-    display: block;
+    right: 15px;
   }
 
   .nav-menu--show {
