@@ -11,7 +11,10 @@ function shrinkHeader() {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop;
 
     if (distanceY > shrinkOn && !mainView.classList.contains('push-down-view')) {
+      // shrink header
       hero.classList.add('disable-transition');
+      navButton.classList.remove('disable-transition');
+
       hero.classList.remove('hero--expanded');
       hero.classList.add('hero--bar');
 
@@ -55,6 +58,8 @@ function shrinkHeader() {
     ) {
       // expand header
       hero.classList.remove('disable-transition');
+      navButton.classList.add('disable-transition');
+
       mainView.classList.remove('push-down-view');
 
       hero.classList.add('hero--expanded');
