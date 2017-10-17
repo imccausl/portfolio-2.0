@@ -10,9 +10,11 @@
 
 	<title>Ian McCausland | Web Developer</title>
 
-	<link rel="stylesheet" href="css/vendor.css">
-
-	<link rel="stylesheet" href="css/style.css">
+	<!-- build:css css/style.css -->
+	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+	<!--endbuild -->
 </head>
 
 <body>
@@ -105,7 +107,10 @@
 		ga('send', 'pageview');
 	</script>
 
-	<script src="js/site.js"></script>
-<script type="text/javascript" src="./js/bundle.js?60ed92b7a0623d2087da"></script></body>
+	<!-- build:js js/site.js -->
+	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<!-- endbuild -->
+<script type="text/javascript" src="./js/bundle.js?e8a137a61677ad615998"></script></body>
 
 </html>
