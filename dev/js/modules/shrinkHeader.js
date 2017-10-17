@@ -12,7 +12,9 @@ function shrinkHeader() {
 
     if (distanceY > shrinkOn && !mainView.classList.contains('push-down-view')) {
       // shrink header
-      hero.classList.add('disable-transition');
+      if (!hero.classList.contains('force-transition')) {
+        hero.classList.add('disable-transition');
+      }
       navButton.classList.remove('disable-transition');
 
       hero.classList.remove('hero--expanded');
@@ -57,6 +59,7 @@ function shrinkHeader() {
       !hero.classList.contains('hero--full-screen')
     ) {
       // expand header
+
       hero.classList.remove('disable-transition');
       navButton.classList.add('disable-transition');
 
