@@ -447,7 +447,7 @@ section#projects-view {
   .nav-button span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: 2px;
     width: 100%;
     background: midnightblue;
     opacity: 1;
