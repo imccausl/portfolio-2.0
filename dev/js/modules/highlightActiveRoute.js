@@ -7,6 +7,9 @@ function highlightActiveRoute(route) {
     links[i].classList.remove('active-route');
   }
 
+  if (!activeRoute) {
+    throw new Error('An attempt to select the link to this route returned null! Are you sure you have a data-route property and that its content matches an existing route?');
+  }
   activeRoute.classList.add('active-route');
 }
 
