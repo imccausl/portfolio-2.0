@@ -10,7 +10,11 @@
 
 	<title>Ian McCausland | Web Developer</title>
 
-	<link rel="stylesheet" href="css/style.css">
+	<!-- build:css css/style.css -->
+	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+	<!--endbuild -->
 </head>
 
 <body>
@@ -32,16 +36,16 @@
 					<nav class="nav--main nav-main-padding--expanded text-center text--huge container">
 						<ul class="nav--list" id="portfolio--nav">
 							<li class="display-block">
-								<a href="/#/stats" data-route="/stats">ABOUT.</a>
+								<a href="/#/stats" data-route="/stats">ABOUT</a>
 							</li>
 							<li class="display-block">
-								<a href="/#/projects" data-route="/projects">PROJECTS.</a>
+								<a href="/#/projects" data-route="/projects">PROJECTS</a>
 							</li>
 							<li class="display-block">
-								<a href="/#/resume" data-route="/resume">RESUME.</a>
+								<a href="/#/resume" data-route="/resume">RESUME</a>
 							</li>
 							<li class="display-block">
-								<a href="http://www.modernmythologies.net" data-route="/blog">BLOG.</a>
+								<a href="http://www.modernmythologies.net" data-route="/blog">BLOG</a>
 							</li>
 						</ul>
 					</nav>
@@ -103,7 +107,10 @@
 		ga('send', 'pageview');
 	</script>
 
-	<script src="js/site.js"></script>
-<script type="text/javascript" src="./js/bundle.js?e8a137a61677ad615998"></script></body>
+	<!-- build:js js/site.js -->
+	<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<!-- endbuild -->
+<script type="text/javascript" src="./js/bundle.js?0b6e2a54065b52537d34"></script></body>
 
 </html>
