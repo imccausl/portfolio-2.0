@@ -46,15 +46,15 @@ function setListeners() {
 function initalizeRoutes() {
   let currentRoute = `/${Router.getFragment()}`;
   if (currentRoute === '/') {
-    currentRoute = '/stats';
+    currentRoute = '/about';
   }
 
   if (!Router.routes[0]) {
     // check if any routes exist
     Router.config({ mode: 'hash' });
 
-    Router.add(/stats/, () => {
-      $('#main-view').load('routes/stats.html', () => {
+    Router.add(/about/, () => {
+      $('#main-view').load('routes/about.html', () => {
         highlightActiveRoute(`/${Router.getFragment()}`);
         CodingTimeWidget($);
         ReadingList(Fetch, key);
@@ -75,7 +75,7 @@ function initalizeRoutes() {
         });
       })
       .add(/\*/, () => {
-        Router.navigate('/stats');
+        Router.navigate('/abaout');
       });
   }
 
