@@ -6,7 +6,7 @@ The main thing that I wanted to do with version 2 of my portfolio was make it ea
 to my portfolio without actually having to go in and edit the code by hand. To this end, I designed
 a module that communicates with the GitHub API and populates my projects listing from the data that
 is returned to it. I tag a repository that I want to highlight from my GitHub account with the
-"portfolio" tag, add a screenshot.png, and my module does the rest: it displays the description,
+"portfolio" tag, add a screenshot.png to the root, and my module does the rest (no pun intended): it displays the description,
 screenshot and enables a button that allows the user to visit a working version of the site, if
 I have provided a link to it in the description!
 
