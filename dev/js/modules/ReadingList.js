@@ -20,7 +20,6 @@ const ReadingList = (fetch, key) => {
           const bookGrId = book.childNodes[1].textContent;
           const bookURL = `https://www.goodreads.com/book/show/${bookGrId}`;
 
-          console.log(book);
           render(makeView(bookTitle, bookAuthor, bookURL), CURR_READING_VIEW);
         } else {
           // if there's a problem fetching the data, just default to a super great book!
@@ -48,7 +47,6 @@ const ReadingList = (fetch, key) => {
   }
 
   function makeView(title, author, url) {
-    console.log(author);
     return `I am currently reading <a href="${url}">${title}</a> by <span class="text--salient">${author}</span>.`;
   }
 
