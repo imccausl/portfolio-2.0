@@ -1,30 +1,26 @@
-import isLocalStorageAvailable, {
-  saveToLocalStorage
-} from "../util/localStorage";
+import isLocalStorageAvailable, { saveToLocalStorage } from '../util/localStorage';
 
 function CodingData($) {
-  const CODING_TIME = "codingTime";
-  const CODING_LANGS = "codingLangs";
-  const CODING_TIME_VIEW = "#coding-widget--time";
-  const CODING_LANGS_VIEW = "#coding-widget--langs";
+  const CODING_TIME = 'codingTime';
+  const CODING_LANGS = 'codingLangs';
+  const CODING_TIME_VIEW = '#coding-widget--time';
+  const CODING_LANGS_VIEW = '#coding-widget--langs';
 
-  let codingTime = undefined;
-  let codingLangs = undefined;
+  let codingTime;
+  let codingLangs;
 
   function parseLangDisplay(data) {
-    let output = "";
+    let output = '';
 
     data.forEach((language, index) => {
+      output = output.concat(`<span class="text--salient">${language}</span>`);
+
       if (index === data.length - 1) {
-        output = output.concat(
-          " and ",
-          `<span class="text--salient">${language}</span>`
-        );
+        if (data.length > 1) {
+          output = output.concat(' and ');
+        }
       } else {
-        output = output.concat(
-          `<span class="text--salient">${language}</span>`,
-          ", "
-        );
+        output = output.concat(', ');
       }
     });
 
@@ -32,14 +28,14 @@ function CodingData($) {
   }
 
   function parseTimeDisplay(data) {
-    let time = `<span class="text--salient">${data.hours} hours</span> and <span class="text--salient">${data.minutes} minutes</span>.`;
+    const time = `<span class="text--salient">${data.hours} hours</span> and <span class="text--salient">${data.minutes} minutes</span>.`;
 
     if (data.hours === 1) {
-      time.replace("hours", "hour");
+      time.replace('hours', 'hour');
     }
 
     if (data.minutes === 1) {
-      time.replace("minutes", "minute");
+      time.replace('minutes', 'minute');
     }
 
     return time;
@@ -56,17 +52,15 @@ function CodingData($) {
   }
 
   const getLanguages = $.ajax({
-    type: "GET",
-    url:
-      "https://wakatime.com/share/@imccausl/aeba19b1-422b-4f7b-917d-af952fd01315.json",
-    dataType: "jsonp"
+    type: 'GET',
+    url: 'https://wakatime.com/share/@imccausl/aeba19b1-422b-4f7b-917d-af952fd01315.json',
+    dataType: 'jsonp',
   });
 
   const getCodingTime = $.ajax({
-    type: "GET",
-    url:
-      "https://wakatime.com/share/@imccausl/e72d3d26-36fb-47e9-89ef-6f831dc89d8c.json",
-    dataType: "jsonp"
+    type: 'GET',
+    url: 'https://wakatime.com/share/@imccausl/e72d3d26-36fb-47e9-89ef-6f831dc89d8c.json',
+    dataType: 'jsonp',
   });
 
   // module exection begins here.
@@ -82,14 +76,9 @@ function CodingData($) {
 
   getLanguages.then(response =>
     displayLangs(
-      parseLangDisplay(
-        response.data
-          .map(language => language.name)
-          .filter(item => item !== "Other")
-      ),
-      CODING_LANGS_VIEW
-    )
-  );
+      parseLangDisplay(response.data.map(language => language.name).filter(item => item !== 'Other')),
+      CODING_LANGS_VIEW,
+    ));
 
   getCodingTime
     .then(response => {
@@ -99,9 +88,9 @@ function CodingData($) {
           .reduce((acc, prev, curr) => acc + prev);
       }
 
-      let totalSeconds = parseTime(response.data);
-      let hours = Math.floor(totalSeconds / 60 / 60);
-      let minutes = Math.floor(totalSeconds / 60 - hours * 60);
+      const totalSeconds = parseTime(response.data);
+      const hours = Math.floor(totalSeconds / 60 / 60);
+      const minutes = Math.floor(totalSeconds / 60 - hours * 60);
 
       return parseTimeDisplay({ hours, minutes });
     })
