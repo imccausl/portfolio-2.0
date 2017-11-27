@@ -15,10 +15,12 @@ function CodingData($) {
     data.forEach((language, index) => {
       output = output.concat(`<span class="text--salient">${language}</span>`);
 
-      if (index === (data.length - 2)) {
-        output = output.concat(' and ');
-      } else {
-        output = output.concat(', ');
+      if (data.length > 1) {
+        if (index === (data.length - 2)) {
+          output = output.concat(' and ');
+        } else if (index < (data.length - 2)) {
+          output = output.concat(', ');
+        }
       }
     });
 
