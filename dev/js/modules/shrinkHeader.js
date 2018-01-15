@@ -36,11 +36,11 @@ function shrinkHeader() {
       headerContent.children[3].children[0].children[0].classList.remove('display-block');
       headerContent.children[3].children[0].children[1].classList.remove('display-block');
       headerContent.children[3].children[0].children[2].classList.remove('display-block');
-      headerContent.children[3].children[0].children[3].classList.remove('display-block');
+      // headerContent.children[3].children[0].children[3].classList.remove('display-block');
       headerContent.children[3].children[0].children[0].classList.add('display-inline-block');
       headerContent.children[3].children[0].children[1].classList.add('display-inline-block');
       headerContent.children[3].children[0].children[2].classList.add('display-inline-block');
-      headerContent.children[3].children[0].children[3].classList.add('display-inline-block');
+      // headerContent.children[3].children[0].children[3].classList.add('display-inline-block');
 
       hero.classList.remove('text-center');
       hero.classList.remove('center-content');
@@ -82,11 +82,11 @@ function shrinkHeader() {
       headerContent.children[3].children[0].children[0].classList.add('display-block');
       headerContent.children[3].children[0].children[1].classList.add('display-block');
       headerContent.children[3].children[0].children[2].classList.add('display-block');
-      headerContent.children[3].children[0].children[3].classList.add('display-block');
+      // headerContent.children[3].children[0].children[3].classList.add('display-block');
       headerContent.children[3].children[0].children[0].classList.remove('display-inline-block');
       headerContent.children[3].children[0].children[1].classList.remove('display-inline-block');
       headerContent.children[3].children[0].children[2].classList.remove('display-inline-block');
-      headerContent.children[3].children[0].children[3].classList.remove('display-inline-block');
+      // headerContent.children[3].children[0].children[3].classList.remove('display-inline-block');
 
       hero.classList.add('text-center');
       hero.classList.add('center-content');
