@@ -44,6 +44,8 @@ function setListeners() {
 }
 
 function initalizeRoutes() {
+  let firstRun = true;
+
   let currentRoute = `/${Router.getFragment()}`;
   if (currentRoute === '/') {
     currentRoute = '/about';
@@ -58,7 +60,12 @@ function initalizeRoutes() {
         highlightActiveRoute(`/${Router.getFragment()}`);
         CodingTimeWidget($);
         ReadingList(Fetch, key);
-        window.scrollTo(0, 460);
+
+        if (firstRun) {
+          firstRun = false;
+        } else {
+          window.scrollTo(0, 460);
+        }
       });
     })
       .add(/projects/, () => {
@@ -75,7 +82,7 @@ function initalizeRoutes() {
         });
       })
       .add(/\*/, () => {
-        Router.navigate('/abaout');
+        Router.navigate('/about');
       });
   }
 

@@ -182,7 +182,7 @@ const ProjectsList = query => {
       render(numProjView(cache.length), '#project-num-view');
 
       setListeners();
-      window.scrollTo(0, 435);
+      window.scrollTo(0, 0);
       toggleLoader();
     })
     .catch(err => {
