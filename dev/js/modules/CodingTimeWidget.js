@@ -53,13 +53,13 @@ function CodingData($) {
 
   const getLanguages = $.ajax({
     type: 'GET',
-    url: 'https://wakatime.com/share/@imccausl/aeba19b1-422b-4f7b-917d-af952fd01315.json',
+    url: 'https://wakatime.com/share/@imccausland/50e9c40d-2a2f-4942-a5a2-e13ef9628c0c.json',
     dataType: 'jsonp',
   });
 
   const getCodingTime = $.ajax({
     type: 'GET',
-    url: 'https://wakatime.com/share/@imccausl/e72d3d26-36fb-47e9-89ef-6f831dc89d8c.json',
+    url: 'https://wakatime.com/share/@imccausland/50e9c40d-2a2f-4942-a5a2-e13ef9628c0c.json',
     dataType: 'jsonp',
   });
 
