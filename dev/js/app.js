@@ -97,6 +97,6 @@ if (!isTouchDevice()) {
   attachTooltip('.contact-bar');
 }
 
-shrinkHeader();
+// shrinkHeader();
 
 Router.check().listen();

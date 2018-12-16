@@ -264,14 +264,11 @@ hr {
   z-index: 10; }
 
 .image--bio-normal {
-  width: 195px;
-  height: 195px;
-  box-shadow: 0 0 4px 0px black; }
+  width: 80px; }
 
 .image--bio-small {
   padding: 10px;
-  width: 58px;
-  height: 55px; }
+  width: 80px; }
 
 .image--bio {
   display: inline-block;
@@ -421,7 +418,7 @@ section#projects-view {
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out; }
   .nav-button span {
-    display: block;
+    display: inline-block;
     position: absolute;
     height: 2px;
     width: 100%;
