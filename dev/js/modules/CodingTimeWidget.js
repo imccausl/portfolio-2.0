@@ -89,7 +89,7 @@ function CodingData($) {
       function parseTime(data) {
         return data
           .map(time => time.grand_total.total_seconds)
-          .reduce((acc, prev, curr) => acc + prev);
+          .reduce((acc, curr) => acc + curr);
       }
 
       const totalSeconds = parseTime(response.data);
