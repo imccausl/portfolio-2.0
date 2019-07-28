@@ -33,7 +33,7 @@ const ReadingList = (fetch, key) => {
           );
         }
       })
-      .fail(err => {
+      .catch(err => {
         console.warn('An error occurred trying to render the Reading List view:', err);
         render(
           makeView(
